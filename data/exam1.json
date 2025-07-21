@@ -1,0 +1,17 @@
+[
+  {
+    "question": "What is the main benefit of AWS Auto Scaling?",
+    "options": ["A. Reduce storage costs", "B. Improve compliance", "C. Automatically adjust resources", "D. Encrypt data at rest"],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which service is used for object storage?",
+    "options": ["A. EC2", "B. S3", "C. IAM", "D. RDS"],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "What does IAM stand for?",
+    "options": ["A. Internet Access Management", "B. Identity and Access Management", "C. Internal Asset Manager", "D. Instance Access Method"],
+    "correctAnswer": "B"
+  }
+]

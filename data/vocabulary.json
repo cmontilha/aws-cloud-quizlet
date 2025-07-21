@@ -1,0 +1,5 @@
+[
+  {"term": "IAM", "definition": "AWS Identity and Access Management - allows you to manage users and their permissions"},
+  {"term": "EC2", "definition": "Virtual server for running applications"},
+  {"term": "S3", "definition": "Scalable storage in the cloud"}
+]
