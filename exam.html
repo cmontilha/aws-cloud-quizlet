@@ -37,12 +37,16 @@
       <button onclick="startExam('exam5.json')" class="card w-full md:w-2/3 lg:w-1/2 text-lg font-semibold text-center">Practice Exam 5</button>
       <button onclick="startExam('exam6.json')" class="card w-full md:w-2/3 lg:w-1/2 text-lg font-semibold text-center">Practice Exam 6</button>
       <button onclick="startExam('exam7.json')" class="card w-full md:w-2/3 lg:w-1/2 text-lg font-semibold text-center">Practice Exam 7</button>
+      <button onclick="startExam('exam8.json')" class="card w-full md:w-2/3 lg:w-1/2 text-lg font-semibold text-center">Practice Exam 8</button>
+      <button onclick="startExam('exam9.json')" class="card w-full md:w-2/3 lg:w-1/2 text-lg font-semibold text-center">Practice Exam 9</button>
+      <button onclick="startExam('exam10.json')" class="card w-full md:w-2/3 lg:w-1/2 text-lg font-semibold text-center">Practice Exam 10</button>
     </div>
   </div>
 
   <div class="max-w-3xl mx-auto p-4" id="exam-screen" style="display:none">
     <div class="progress"><div id="progress-bar" class="progress-bar"></div></div>
     <div id="timer" class="font-semibold mb-2">60:00</div>
+    <div id="question-number" class="font-semibold mb-2"></div>
     <div id="question" class="card mb-4"></div>
     <div id="options" class="flex flex-col space-y-2"></div>
     <button id="back-btn" onclick="prevQuestion()" class="mt-4">Previous Question</button>

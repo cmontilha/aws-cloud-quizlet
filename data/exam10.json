@@ -1,0 +1,106 @@
+[
+  {
+    "question": "Which of the following can an AWS customer use to launch a new Amazon Relational Database Service (Amazon RDS) cluster? (Select TWO)",
+    "options": [
+      "A. AWS Concierge.",
+      "B. AWS CloudFormation.",
+      "C. Amazon Simple Storage Service (Amazon S3).",
+      "D. Amazon EC2 Auto Scaling.",
+      "E. AWS Management Console."
+    ],
+    "correctAnswer": ["B", "E"]
+  },
+  {
+    "question": "Which of the following Reserved Instance (RI) pricing models provides the highest average savings compared to On-Demand pricing?",
+    "options": [
+      "A. One-year, No Upfront, Standard RI pricing.",
+      "B. One-year, All Upfront, Convertible RI pricing.",
+      "C. Three-year, All Upfront, Standard RI pricing.",
+      "D. Three-year, No Upfront, Convertible RI pricing."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which of the following are features of Amazon CloudWatch Logs? (Select TWO)",
+    "options": [
+      "A. Summaries by Amazon Simple Notification Service (Amazon SNS).",
+      "B. Free Amazon Elasticsearch Service analytics.",
+      "C. Provided at no charge.",
+      "D. Real-time monitoring.",
+      "E. Adjustable retention."
+    ],
+    "correctAnswer": ["D", "E"]
+  },
+  {
+    "question": "Which of the following is an AWS-managed compute service?",
+    "options": [
+      "A. Amazon SWF.",
+      "B. Amazon EC2.",
+      "C. AWS Lambda.",
+      "D. Amazon Aurora."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "A company wants to reduce the physical compute footprint that developers use to run code. Which service would meet that need by enabling serverless architectures?",
+    "options": [
+      "A. Amazon Elastic Compute Cloud (Amazon EC2).",
+      "B. AWS Lambda.",
+      "C. Amazon DynamoDB.",
+      "D. AWS CodeCommit."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "Which of the following is the customer's responsibility under the AWS shared responsibility model?",
+    "options": [
+      "A. Patching underlying infrastructure",
+      "B. Physical security",
+      "C. Patching Amazon EC2 instances",
+      "D. Patching network infrastructure"
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "According to the AWS shared responsibility model who is responsible for configuration management?",
+    "options": [
+      "A. It is solely the responsibility of the customer.",
+      "B. It is solely the responsibility of AWS.",
+      "C. It is shared between AWS and the customer.",
+      "D. It is not part of the AWS shared responsibility model."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which security service automatically recognizes and classifies sensitive data or intellectual property on AWS?",
+    "options": [
+      "A. Amazon GuardDuty.",
+      "B. Amazon Macie.",
+      "C. Amazon Inspector.",
+      "D. AWS Shield."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "Which of the following BEST describe the AWS pricing model? (Select TWO)",
+    "options": [
+      "A. Fixed-term.",
+      "B. Pay-as-you-go.",
+      "C. Colocation.",
+      "D. Planned.",
+      "E. Variable cost."
+    ],
+    "correctAnswer": ["B", "E"]
+  },
+  {
+    "question": "Under the shared responsibility model, which of the following tasks are the responsibility of the AWS customer? (Select TWO)",
+    "options": [
+      "A. Ensuring that application data is encrypted at rest.",
+      "B. Ensuring that AWS NTP servers are set to the correct time.",
+      "C. Ensuring that users have received security training in the use of AWS services.",
+      "D. Ensuring that access to data centers is restricted.",
+      "E. Ensuring that hardware is disposed of properly."
+    ],
+    "correctAnswer": ["A", "C"]
+  }
+]

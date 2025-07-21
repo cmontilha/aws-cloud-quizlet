@@ -1,0 +1,105 @@
+[
+  {
+    "question": "What is the main benefit of attaching security groups to an Amazon RDS instance?",
+    "options": [
+      "A. Manages user access and encryption keys.",
+      "B. Controls what IP address ranges can connect to your database instance.",
+      "C. Deploys SSL/TLS certificates for use with your database instance.",
+      "D. Distributes incoming traffic across multiple targets."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "A company wants to use Amazon Elastic Container Service (Amazon ECS) to run its containerized applications. For compliance reasons, the company wants to retain complete visibility and control over the underlying server cluster. Which Amazon ECS launch type will satisfy these requirements?",
+    "options": [
+      "A. EC2 launch type.",
+      "B. Fargate launch type.",
+      "C. Lightsail launch type.",
+      "D. Lambda launch type."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "You have multiple standalone AWS accounts and you want to decrease your AWS monthly charges. What should you do?",
+    "options": [
+      "A. Try to remove unnecessary AWS accounts.",
+      "B. Add the accounts to an AWS Organization and use Consolidated Billing.",
+      "C. Track the AWS charges that are incurred by the member accounts.",
+      "D. Enable AWS tiered-pricing before provisioning resources."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "You have been tasked with auditing the security of your VPC. As part of this process, you need to start by analyzing what inbound and outbound traffic is allowed on your EC2 instances. What two parts of the VPC do you need to check to accomplish this task?",
+    "options": [
+      "A. Network ACLs and Traffic Manager.",
+      "B. Network ACLs and Subnets.",
+      "C. Security Groups and Internet Gateways.",
+      "D. Security Groups and Network ACLs."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "What does the AWS 'Business' support plan provide? (Choose TWO)",
+    "options": [
+      "A. Access to the full set of Trusted Advisor checks.",
+      "B. Support Concierge Service.",
+      "C. Less than 15 minutes response-time support if your business critical system goes down.",
+      "D. AWS Support API.",
+      "E. Proactive Technical Account Management."
+    ],
+    "correctAnswer": ["A", "D"]
+  },
+  {
+    "question": "You have just finished writing your application code. Which service can be used to automate the deployment and scaling of your application?",
+    "options": [
+      "A. Amazon Simple Storage Service.",
+      "B. AWS Elastic Beanstalk.",
+      "C. AWS CodeCommit.",
+      "D. Amazon Elastic File System."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "Which statement is true in relation to security in AWS?",
+    "options": [
+      "A. AWS manages everything related to EC2 operating systems.",
+      "B. AWS customers are responsible for patching any database software running on Amazon EC2.",
+      "C. Server side encryption is the responsibility of AWS.",
+      "D. AWS is responsible for the security of your application."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "Amazon EC2 instances are conceptually very similar to traditional servers. However, using Amazon EC2 server instances in the same manner as traditional hardware server instances is only a starting point. What are the main benefits of using the AWS EC2 instances instead of traditional servers? (Choose TWO)",
+    "options": [
+      "A. Improves Fault-Tolerance.",
+      "B. Provides your business with a seamless remote accessibility.",
+      "C. Prevents unauthorized users from getting into your network.",
+      "D. Provides automatic data backups.",
+      "E. Can be scaled manually in a shorter period of time."
+    ],
+    "correctAnswer": ["A", "E"]
+  },
+  {
+    "question": "Which statement is true regarding AWS pricing? (Choose TWO)",
+    "options": [
+      "A. With the AWS pay-as-you-go pricing model, you don't have to pay any upfront fee.",
+      "B. You have no responsibility for third-party software license costs.",
+      "C. You only pay for the individual services that you need with no long-term contracts.",
+      "D. For some services, you have to pay a startup fee in order to get the service running.",
+      "E. There are no reservations on AWS, you only pay for what you use."
+    ],
+    "correctAnswer": ["A", "C"]
+  },
+  {
+    "question": "Which AWS service provides the EASIEST way to set up and manage a secure, well-architected, multi-account AWS environment?",
+    "options": [
+      "A. AWS Control Tower.",
+      "B. Amazon Macie.",
+      "C. AWS Systems Manager Patch Manager.",
+      "D. AWS Security Hub."
+    ],
+    "correctAnswer": "A"
+  }
+]
