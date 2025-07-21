@@ -136,6 +136,7 @@ function showQuestion() {
   questionEl.textContent = q.question;
   const optionsEl = document.getElementById('options');
   optionsEl.innerHTML = '';
+  document.getElementById('back-btn').style.display = currentQuestion === 0 ? 'none' : 'inline-block';
   if (Array.isArray(q.correctAnswer)) {
     q.options.forEach(opt => {
       const label = document.createElement('label');
@@ -150,15 +151,32 @@ function showQuestion() {
       selectAnswer(selected);
     };
     optionsEl.appendChild(submit);
+    // pre-select previous answers
+    if (Array.isArray(answers[currentQuestion])) {
+      const checks = optionsEl.querySelectorAll('input[type="checkbox"]');
+      checks.forEach(ch => {
+        if (answers[currentQuestion].includes(ch.value)) ch.checked = true;
+      });
+    }
   } else {
     q.options.forEach(opt => {
       const btn = document.createElement('button');
       btn.textContent = opt;
       btn.onclick = () => selectAnswer(opt.charAt(0));
+      if (answers[currentQuestion] === opt.charAt(0)) {
+        btn.classList.add('selected-option');
+      }
       optionsEl.appendChild(btn);
     });
   }
   updateProgress();
+}
+
+function prevQuestion() {
+  if (currentQuestion > 0) {
+    currentQuestion--;
+    showQuestion();
+  }
 }
 
 function selectAnswer(answer) {
