@@ -136,6 +136,10 @@ function showQuestion() {
   questionEl.textContent = q.question;
   const optionsEl = document.getElementById('options');
   optionsEl.innerHTML = '';
+  const qNumEl = document.getElementById('question-number');
+  if (qNumEl) {
+    qNumEl.textContent = `Question ${currentQuestion + 1} of ${exam.length}`;
+  }
   document.getElementById('back-btn').style.display = currentQuestion === 0 ? 'none' : 'inline-block';
   if (Array.isArray(q.correctAnswer)) {
     q.options.forEach(opt => {
