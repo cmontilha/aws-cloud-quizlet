@@ -4,29 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AWS Cloud Quizlet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { inter: ['Inter', 'sans-serif'] } } } }
+  </script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <header>
-    <h1>AWS Cloud Practitioner Study</h1>
-    <button id="theme-toggle">Toggle Theme</button>
-    <nav>
-      <a href="vocabulary.html">Vocabulary</a>
-      <a href="exam.html">Practice Exams</a>
-      <a href="flashcards.html">Flashcards</a>
-      <a href="key-concepts.html">Key Concepts</a>
-      <a href="exam-tips.html">Exam Tips</a>
-    </nav>
+<body class="font-inter bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+  <header class="sticky top-0 z-10 bg-white/80 backdrop-blur dark:bg-gray-800/80">
+    <div class="max-w-5xl mx-auto flex items-center justify-between p-4">
+      <h1 class="text-2xl font-bold">AWS Cloud Practitioner Study</h1>
+      <div class="flex items-center space-x-4">
+        <nav class="hidden md:flex space-x-4 text-lg">
+          <a class="hover:underline" href="vocabulary.html">Vocabulary</a>
+          <a class="hover:underline" href="exam.html">Practice Exams</a>
+          <a class="hover:underline" href="flashcards.html">Flashcards</a>
+          <a class="hover:underline" href="key-concepts.html">Key Concepts</a>
+          <a class="hover:underline" href="exam-tips.html">Exam Tips</a>
+        </nav>
+        <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"></button>
+      </div>
+    </div>
   </header>
-
-  <div class="container">
-    <h2>Welcome</h2>
-    <p>Prepare for the AWS Certified Cloud Practitioner exam with vocabulary lists, practice exams, flashcards, key concepts, and more.</p>
+  <section class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white py-20">
+    <div class="max-w-3xl mx-auto text-center px-4">
+      <h2 class="text-4xl font-bold mb-4">Welcome to Your AWS Study Hub</h2>
+      <p class="mb-6">Prepare for the AWS Certified Cloud Practitioner exam with vocabulary lists, practice exams, flashcards, key concepts and more.</p>
+      <a href="exam.html" class="inline-block bg-white text-indigo-600 font-semibold px-6 py-3 rounded shadow hover:shadow-lg transition">Start Practicing</a>
+    </div>
+  </section>
+  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 p-4">
+    <a href="vocabulary.html" class="card block p-6 rounded-lg shadow hover:shadow-lg transition bg-white dark:bg-gray-800">
+      <h3 class="text-xl font-semibold mb-2">Vocabulary</h3>
+      <p>Browse key terms with definitions.</p>
+    </a>
+    <a href="flashcards.html" class="card block p-6 rounded-lg shadow hover:shadow-lg transition bg-white dark:bg-gray-800">
+      <h3 class="text-xl font-semibold mb-2">Flashcards</h3>
+      <p>Flip through cards to test your memory.</p>
+    </a>
+    <a href="exam.html" class="card block p-6 rounded-lg shadow hover:shadow-lg transition bg-white dark:bg-gray-800">
+      <h3 class="text-xl font-semibold mb-2">Practice Exams</h3>
+      <p>Take timed exams and track your progress.</p>
+    </a>
+    <a href="exam-tips.html" class="card block p-6 rounded-lg shadow hover:shadow-lg transition bg-white dark:bg-gray-800">
+      <h3 class="text-xl font-semibold mb-2">Exam Tips</h3>
+      <p>Helpful hints for exam day success.</p>
+    </a>
   </div>
-
-  <footer>
-    <a href="https://github.com/" aria-label="GitHub">GitHub</a> |
-    <a href="https://linkedin.com/" aria-label="LinkedIn">LinkedIn</a>
+  <footer class="py-6 text-center bg-gray-100 dark:bg-gray-800">
+    <a class="mx-2 hover:underline" href="https://github.com/" aria-label="GitHub">GitHub</a>
+    |
+    <a class="mx-2 hover:underline" href="https://linkedin.com/" aria-label="LinkedIn">LinkedIn</a>
   </footer>
   <script src="js/main.js"></script>
 </body>
