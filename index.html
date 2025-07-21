@@ -7,12 +7,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { inter: ['Inter', 'sans-serif'] } } } }
+    tailwind.config = { theme: { extend: { fontFamily: { inter: ['Inter', 'sans-serif'] } } } }
   </script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="font-inter bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
-  <header class="sticky top-0 z-10 bg-white/80 backdrop-blur dark:bg-gray-800/80">
+<body class="font-inter bg-gray-50 text-gray-800">
+  <header class="sticky top-0 z-10 bg-white/80 backdrop-blur">
     <div class="max-w-5xl mx-auto flex items-center justify-between p-4">
       <h1 class="text-2xl font-bold">AWS Cloud Practitioner Study</h1>
       <div class="flex items-center space-x-4">
@@ -23,7 +23,6 @@
           <a class="hover:underline" href="key-concepts.html">Key Concepts</a>
           <a class="hover:underline" href="exam-tips.html">Exam Tips</a>
         </nav>
-        <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"></button>
       </div>
     </div>
   </header>
@@ -35,24 +34,24 @@
     </div>
   </section>
   <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 p-4">
-    <a href="vocabulary.html" class="card block p-6 rounded-lg shadow hover:shadow-lg transition bg-white dark:bg-gray-800">
+    <a href="vocabulary.html" class="card block p-6 rounded-lg shadow hover:shadow-lg transition bg-white">
       <h3 class="text-xl font-semibold mb-2">Vocabulary</h3>
       <p>Browse key terms with definitions.</p>
     </a>
-    <a href="flashcards.html" class="card block p-6 rounded-lg shadow hover:shadow-lg transition bg-white dark:bg-gray-800">
+    <a href="flashcards.html" class="card block p-6 rounded-lg shadow hover:shadow-lg transition bg-white">
       <h3 class="text-xl font-semibold mb-2">Flashcards</h3>
       <p>Flip through cards to test your memory.</p>
     </a>
-    <a href="exam.html" class="card block p-6 rounded-lg shadow hover:shadow-lg transition bg-white dark:bg-gray-800">
+    <a href="exam.html" class="card block p-6 rounded-lg shadow hover:shadow-lg transition bg-white">
       <h3 class="text-xl font-semibold mb-2">Practice Exams</h3>
       <p>Take timed exams and track your progress.</p>
     </a>
-    <a href="exam-tips.html" class="card block p-6 rounded-lg shadow hover:shadow-lg transition bg-white dark:bg-gray-800">
+    <a href="exam-tips.html" class="card block p-6 rounded-lg shadow hover:shadow-lg transition bg-white">
       <h3 class="text-xl font-semibold mb-2">Exam Tips</h3>
       <p>Helpful hints for exam day success.</p>
     </a>
   </div>
-  <footer class="py-6 text-center bg-gray-100 dark:bg-gray-800">
+  <footer class="py-6 text-center bg-gray-100">
     <a class="mx-2 hover:underline" href="https://github.com/" aria-label="GitHub">GitHub</a>
     |
     <a class="mx-2 hover:underline" href="https://linkedin.com/" aria-label="LinkedIn">LinkedIn</a>
