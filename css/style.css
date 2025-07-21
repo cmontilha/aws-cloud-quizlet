@@ -4,11 +4,6 @@
   --card-bg: #f3f3f3;
 }
 
-[data-theme="dark"] {
-  --bg-color: #121212;
-  --text-color: #e0e0e0;
-  --card-bg: #1e1e1e;
-}
 
 body {
   background: var(--bg-color);

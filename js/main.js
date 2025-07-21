@@ -1,42 +1,53 @@
-// Theme toggle
-function loadTheme() {
-  const theme = localStorage.getItem('theme') || 'light';
-  document.documentElement.setAttribute('data-theme', theme);
-  updateToggleIcon();
-}
-
-function toggleTheme() {
-  const current = document.documentElement.getAttribute('data-theme');
-  const next = current === 'dark' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', next);
-  localStorage.setItem('theme', next);
-  updateToggleIcon();
-}
-
-function updateToggleIcon() {
-  const btn = document.getElementById('theme-toggle');
-  if (!btn) return;
-  const theme = document.documentElement.getAttribute('data-theme');
-  btn.textContent = theme === 'dark' ? '☀️' : '🌙';
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-  loadTheme();
-  const toggleBtn = document.getElementById('theme-toggle');
-  if (toggleBtn) toggleBtn.addEventListener('click', toggleTheme);
+  if (document.getElementById('vocab-list')) {
+    loadVocabulary();
+  }
+  if (document.getElementById('flashcard')) {
+    initFlashcards();
+  }
 });
 
-// Vocabulary Loader
+// Vocabulary Loader with search and grouping
+let vocabulary = [];
 async function loadVocabulary() {
   const res = await fetch('data/vocabulary.json');
-  const vocab = await res.json();
+  vocabulary = await res.json();
+  const search = document.getElementById('search-input');
+  if (search) {
+    search.addEventListener('input', () => renderVocabulary(search.value));
+  }
+  renderVocabulary('');
+}
+
+function renderVocabulary(filter) {
   const container = document.getElementById('vocab-list');
   if (!container) return;
-  vocab.forEach(item => {
-    const div = document.createElement('div');
-    div.className = 'card';
-    div.innerHTML = `<strong>${item.term}</strong>: ${item.definition}`;
-    container.appendChild(div);
+  container.innerHTML = '';
+  const filtered = vocabulary.filter(v => {
+    const text = (v.term + ' ' + v.definition).toLowerCase();
+    return text.includes(filter.toLowerCase());
+  });
+  const groups = {};
+  filtered.forEach(v => {
+    const cat = v.category || 'Other';
+    if (!groups[cat]) groups[cat] = [];
+    groups[cat].push(v);
+  });
+  Object.keys(groups).sort().forEach(cat => {
+    const details = document.createElement('details');
+    details.open = true;
+    details.className = 'mb-4';
+    const summary = document.createElement('summary');
+    summary.className = 'font-semibold cursor-pointer mb-2';
+    summary.textContent = cat;
+    details.appendChild(summary);
+    groups[cat].forEach(v => {
+      const div = document.createElement('div');
+      div.className = 'card mb-2';
+      div.innerHTML = `<strong>${v.term}</strong>: ${v.definition}`;
+      details.appendChild(div);
+    });
+    container.appendChild(details);
   });
 }
 
