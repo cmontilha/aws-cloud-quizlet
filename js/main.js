@@ -2,6 +2,7 @@
 function loadTheme() {
   const theme = localStorage.getItem('theme') || 'light';
   document.documentElement.setAttribute('data-theme', theme);
+  updateToggleIcon();
 }
 
 function toggleTheme() {
@@ -9,6 +10,14 @@ function toggleTheme() {
   const next = current === 'dark' ? 'light' : 'dark';
   document.documentElement.setAttribute('data-theme', next);
   localStorage.setItem('theme', next);
+  updateToggleIcon();
+}
+
+function updateToggleIcon() {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  const theme = document.documentElement.getAttribute('data-theme');
+  btn.textContent = theme === 'dark' ? '☀️' : '🌙';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
