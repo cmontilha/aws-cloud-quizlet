@@ -130,17 +130,33 @@ function showQuestion() {
   questionEl.textContent = q.question;
   const optionsEl = document.getElementById('options');
   optionsEl.innerHTML = '';
-  q.options.forEach(opt => {
-    const btn = document.createElement('button');
-    btn.textContent = opt;
-    btn.onclick = () => selectAnswer(opt.charAt(0));
-    optionsEl.appendChild(btn);
-  });
+  if (Array.isArray(q.correctAnswer)) {
+    q.options.forEach(opt => {
+      const label = document.createElement('label');
+      label.className = 'mb-2 flex items-center';
+      label.innerHTML = `<input type="checkbox" value="${opt.charAt(0)}" class="mr-2"> ${opt}`;
+      optionsEl.appendChild(label);
+    });
+    const submit = document.createElement('button');
+    submit.textContent = 'Submit Answer';
+    submit.onclick = () => {
+      const selected = [...optionsEl.querySelectorAll('input:checked')].map(i => i.value);
+      selectAnswer(selected);
+    };
+    optionsEl.appendChild(submit);
+  } else {
+    q.options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.textContent = opt;
+      btn.onclick = () => selectAnswer(opt.charAt(0));
+      optionsEl.appendChild(btn);
+    });
+  }
   updateProgress();
 }
 
-function selectAnswer(letter) {
-  answers[currentQuestion] = letter;
+function selectAnswer(answer) {
+  answers[currentQuestion] = answer;
   currentQuestion++;
   if (currentQuestion >= exam.length) {
     finishExam();
@@ -163,9 +179,17 @@ function finishExam() {
   let score = 0;
   exam.forEach((q, i) => {
     const li = document.createElement('li');
-    li.innerHTML = `<strong>Q${i + 1}:</strong> ${q.question}<br> Your answer: ${answers[i] || 'None'} | Correct: ${q.correctAnswer}`;
+    const userAns = Array.isArray(answers[i]) ? answers[i].join(',') : (answers[i] || 'None');
+    const correctAns = Array.isArray(q.correctAnswer) ? q.correctAnswer.join(',') : q.correctAnswer;
+    li.innerHTML = `<strong>Q${i + 1}:</strong> ${q.question}<br> Your answer: ${userAns} | Correct: ${correctAns}`;
     list.appendChild(li);
-    if (answers[i] === q.correctAnswer) score++;
+    if (Array.isArray(q.correctAnswer)) {
+      if (Array.isArray(answers[i]) && answers[i].length === q.correctAnswer.length && answers[i].every(a => q.correctAnswer.includes(a))) {
+        score++;
+      }
+    } else {
+      if (answers[i] === q.correctAnswer) score++;
+    }
   });
   const percent = Math.round((score / exam.length) * 100);
   resultEl.querySelector('#score').textContent = `${score}/${exam.length} (${percent}%)`;
