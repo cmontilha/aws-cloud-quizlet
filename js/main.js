@@ -73,6 +73,10 @@ function showFlashcard() {
   const item = flashcards[flashIndex];
   front.textContent = item.term;
   back.textContent = item.definition;
+  const progress = document.getElementById('flash-progress');
+  if (progress) {
+    progress.textContent = `Card ${flashIndex + 1} of ${flashcards.length}`;
+  }
 }
 
 function nextCard() {
