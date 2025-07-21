@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice Exams</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Practice Exams</h1>
+    <button id="theme-toggle">Toggle Theme</button>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="vocabulary.html">Vocabulary</a>
+      <a href="flashcards.html">Flashcards</a>
+    </nav>
+  </header>
+
+  <div class="container" id="start-screen">
+    <p>Select an exam to begin:</p>
+    <button onclick="startExam('exam1.json')">Practice Exam 1</button>
+  </div>
+
+  <div class="container" id="exam-screen" style="display:none">
+    <div class="progress"><div id="progress-bar" class="progress-bar"></div></div>
+    <div id="timer">60:00</div>
+    <div id="question" class="card"></div>
+    <div id="options"></div>
+  </div>
+
+  <div class="container" id="result-screen" style="display:none">
+    <h2>Results</h2>
+    <p id="score"></p>
+    <p id="passfail"></p>
+    <ol id="results-list"></ol>
+    <button onclick="retryExam()">Retry</button>
+    <a href="index.html">Home</a>
+  </div>
+
+  <footer>
+    <a href="index.html">Back to Home</a>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

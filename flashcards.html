@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcards</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="initFlashcards()">
+  <header>
+    <h1>Flashcards</h1>
+    <button id="theme-toggle">Toggle Theme</button>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="vocabulary.html">Vocabulary</a>
+      <a href="exam.html">Practice Exams</a>
+    </nav>
+  </header>
+  <div class="container">
+    <div id="flashcard" class="flashcard" onclick="flipCard()">
+      <div class="flashcard-inner">
+        <div class="flashcard-front card"></div>
+        <div class="flashcard-back card"></div>
+      </div>
+    </div>
+    <button onclick="prevCard()">Prev</button>
+    <button onclick="nextCard()">Next</button>
+    <button onclick="shuffleCards()">Shuffle</button>
+  </div>
+  <footer>
+    <a href="index.html">Back to Home</a>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
