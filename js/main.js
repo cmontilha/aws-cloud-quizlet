@@ -68,6 +68,7 @@ function flipCard() {
 function showFlashcard() {
   const card = document.getElementById('flashcard');
   if (!card) return;
+  card.classList.remove('flip');
   const front = card.querySelector('.flashcard-front');
   const back = card.querySelector('.flashcard-back');
   const item = flashcards[flashIndex];
