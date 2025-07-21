@@ -62,13 +62,14 @@ async function initFlashcards() {
 
 function flipCard() {
   const card = document.getElementById('flashcard');
-  card.classList.toggle('flip');
+  if (!card) return;
+  card.classList.toggle('is-flipped');
 }
 
 function showFlashcard() {
   const card = document.getElementById('flashcard');
   if (!card) return;
-  card.classList.remove('flip');
+  card.classList.remove('is-flipped');
   const front = card.querySelector('.flashcard-front');
   const back = card.querySelector('.flashcard-back');
   const item = flashcards[flashIndex];
