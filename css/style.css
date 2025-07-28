@@ -64,13 +64,13 @@ button {
 }
 
 button:hover {
-  background: #1e40af;
+  background: #abbbff;
   transform: translateY(-2px);
 }
 
 .selected-option {
   background: #dbeafe;
-  color: #1e40af;
+  color: #abc0f8;
 }
 
   .progress {
