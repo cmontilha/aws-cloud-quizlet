@@ -8,7 +8,10 @@
       "D. Encrypt the data prior to uploading it.",
       "E. Delete all IAM users that have access to S3."
     ],
-    "correctAnswer": ["C", "D"]
+    "correctAnswer": [
+      "C",
+      "D"
+    ]
   },
   {
     "question": "Which AWS service helps developers compile and test their code?",
@@ -29,7 +32,10 @@
       "D. Creating and deleting S3 buckets.",
       "E. The total size in gigabytes of all objects stored."
     ],
-    "correctAnswer": ["C", "E"]
+    "correctAnswer": [
+      "C",
+      "E"
+    ]
   },
   {
     "question": "What does the Amazon CloudFront service provide? (Choose TWO)",
@@ -40,7 +46,10 @@
       "D. Stores archived data at very low costs.",
       "E. Delivers content to end users with low latency."
     ],
-    "correctAnswer": ["B", "E"]
+    "correctAnswer": [
+      "B",
+      "E"
+    ]
   },
   {
     "question": "You are facing a lot of problems with your current contact center. Which service provides a cloud-based contact center that can deliver a better service for your customers?",
@@ -71,7 +80,10 @@
       "D. Spot.",
       "E. Standard."
     ],
-    "correctAnswer": ["A", "E"]
+    "correctAnswer": [
+      "A",
+      "E"
+    ]
   },
   {
     "question": "Which of the following services gives you access to all AWS auditor-issued reports and certifications?",
@@ -122,7 +134,10 @@
       "D. Amazon ECS.",
       "E. Amazon EMR."
     ],
-    "correctAnswer": ["B", "C"]
+    "correctAnswer": [
+      "B",
+      "C"
+    ]
   },
   {
     "question": "For compliance and regulatory purposes, a government agency requires that their applications must run on hardware that is dedicated to them only. How can you meet this requirement?",
@@ -213,7 +228,10 @@
       "D. AWS CodeCommit.",
       "E. CloudHSM."
     ],
-    "correctAnswer": ["A", "E"]
+    "correctAnswer": [
+      "A",
+      "E"
+    ]
   },
   {
     "question": "Which of the following services allows you to install and run custom relational database software?",
@@ -254,7 +272,10 @@
       "D. Disposable resources instead of fixed servers.",
       "E. Multi-AZ deployments instead of multi-region deployments."
     ],
-    "correctAnswer": ["B", "D"]
+    "correctAnswer": [
+      "B",
+      "D"
+    ]
   },
   {
     "question": "Where can AWS account owners get a list of all users in their account, including the status of their AWS credentials?",
@@ -295,7 +316,10 @@
       "D. Amazon Route 53.",
       "E. AWS VPN."
     ],
-    "correctAnswer": ["B", "C"]
+    "correctAnswer": [
+      "B",
+      "C"
+    ]
   },
   {
     "question": "Which of the following factors affect Amazon CloudFront cost? (Choose TWO)",
@@ -306,7 +330,10 @@
       "D. Instance type.",
       "E. Storage Class."
     ],
-    "correctAnswer": ["A", "B"]
+    "correctAnswer": [
+      "A",
+      "B"
+    ]
   },
   {
     "question": "Which of the following resources can an AWS customer use to learn more about prohibited uses of the services offered by AWS?",
@@ -327,7 +354,10 @@
       "D. AWS Security Blog.",
       "E. AWS Classroom Training."
     ],
-    "correctAnswer": ["A", "D"]
+    "correctAnswer": [
+      "A",
+      "D"
+    ]
   },
   {
     "question": "How can you protect data stored on Amazon S3 from accidental deletion?",
@@ -408,7 +438,10 @@
       "D. Help organization achieve their desired business outcomes with AWS.",
       "E. Consolidate billing across multiple AWS accounts."
     ],
-    "correctAnswer": ["A", "E"]
+    "correctAnswer": [
+      "A",
+      "E"
+    ]
   },
   {
     "question": "Which AWS service allows you to build a data warehouse in the cloud?",
@@ -469,7 +502,10 @@
       "D. Environmental controls.",
       "E. Resource Configuration Management."
     ],
-    "correctAnswer": ["C", "D"]
+    "correctAnswer": [
+      "C",
+      "D"
+    ]
   },
   {
     "question": "What can you access by visiting the URL: http://status.aws.amazon.com?",
@@ -490,7 +526,10 @@
       "D. Reduce the size of media assets using the Amazon Elastic Transcoder.",
       "E. Store media assets in S3 and use CloudFront to distribute these assets."
     ],
-    "correctAnswer": ["A", "E"]
+    "correctAnswer": [
+      "A",
+      "E"
+    ]
   },
   {
     "question": "Which of the following are part of the seven design principles for security in the cloud? (Choose TWO)",
@@ -501,7 +540,10 @@
       "D. Enable real-time traceability.",
       "E. Never store sensitive data in the cloud."
     ],
-    "correctAnswer": ["B", "D"]
+    "correctAnswer": [
+      "B",
+      "D"
+    ]
   },
   {
     "question": "A company is migrating production workloads to AWS, and they are concerned about cost management across different departments. Which option should the company implement to categorize and track AWS spending?",
@@ -512,5 +554,163 @@
       "D. Configure AWS Price List API to receive billing updates for each department automatically."
     ],
     "correctAnswer": "C"
+  },
+  {
+    "question": "What is the AWS feature that provides an additional level of security above the default authentication mechanism of usernames and passwords?",
+    "options": [
+      "A. Encrypted keys.",
+      "B. Email verification.",
+      "C. AWS KMS.",
+      "D. AWS MFA."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "Which of the following can limit Amazon Storage Service (Amazon S3) bucket access to specific users?",
+    "options": [
+      "A. A public and private key-pair",
+      "B. Amazon Inspector",
+      "C. AWS Identity and Access Management (IAM) policies",
+      "D. Security Groups"
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which of the following is a cloud architectural design principle?",
+    "options": [
+      "A. Scale up not out.",
+      "B. Loosely couple components.",
+      "C. Build monolithic systems.",
+      "D. Use commercial database software."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "Why does every AWS Region contain multiple Availability Zones?",
+    "options": [
+      "A. Multiple Availability Zones allows you to build resilient and highly available architectures.",
+      "B. Multiple Availability Zones results in lower total cost compared to deploying in a single Availability Zone.",
+      "C. Multiple Availability Zones allows for data replication and global reach.",
+      "D. Multiple Availability Zones within a region increases the storage capacity available in that region."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "Which AWS Service offers volume discounts based on usage?",
+    "options": [
+      "A. Amazon VPC.",
+      "B. Amazon S3.",
+      "C. Amazon Lightsail.",
+      "D. AWS Cost Explorer."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "What should you do if you see resources, which you don’t remember creating, in the AWS Management Console? (Choose TWO)",
+    "options": [
+      "A. Stop all running services and open an investigation.",
+      "B. Give your root account password to AWS Support so that they can assist in troubleshooting and securing the account.",
+      "C. Check the AWS CloudTrail logs and delete all IAM users that have access to your resources.",
+      "D. Open an investigation and delete any potentially compromised IAM users.",
+      "E. Change your AWS root account password and the passwords of any IAM users."
+    ],
+    "correctAnswer": [
+      "D",
+      "E"
+    ]
+  },
+  {
+    "question": "A company is building an online cloud storage platform. They need a storage service that can scale capacity automatically, while minimizing cost. Which AWS storage service should the company use to meet these requirements?",
+    "options": [
+      "A. Amazon Simple Storage Service.",
+      "B. Amazon Elastic Block Store.",
+      "C. Amazon Elastic Container Service.",
+      "D. AWS Storage Gateway."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "A company has developed an eCommerce web application in AWS. What should they do to ensure that the application has the highest level of availability?",
+    "options": [
+      "A. Deploy the application across multiple Availability Zones and Edge locations.",
+      "B. Deploy the application across multiple Availability Zones and subnets.",
+      "C. Deploy the application across multiple Regions and Availability Zones.",
+      "D. Deploy the application across multiple VPC’s and subnets."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which of the following are features of Amazon CloudWatch Logs? (Select TWO.)",
+    "options": [
+      "A. Summaries by Amazon Simple Notification Service (Amazon SNS)",
+      "B. Free Amazon Elasticsearch Service analytics",
+      "C. Provided at no charge",
+      "D. Real-time monitoring",
+      "E. Adjustable retention"
+    ],
+    "correctAnswer": [
+      "D",
+      "E"
+    ]
+  },
+  {
+    "question": "Which statement best describes the AWS Pay-As-You-Go pricing model?",
+    "options": [
+      "A. With AWS, you replace low upfront expenses with large variable payments.",
+      "B. With AWS, you replace low upfront expenses with large fixed payments.",
+      "C. With AWS, you replace large upfront expenses with low fixed payments.",
+      "D. With AWS, you replace large capital expenses with low variable payments."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "Which feature of the AWS Cloud will support an international company’s requirement for low latency to all of its customers?",
+    "options": [
+      "A. Fault tolerance",
+      "B. Global reach",
+      "C. Pay-as-you-go pricing",
+      "D. High availability"
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "What is the AWS service that performs automated network assessments of Amazon EC2 instances to check for vulnerabilities?",
+    "options": [
+      "A. Amazon Kinesis.",
+      "B. Security groups.",
+      "C. Amazon Inspector.",
+      "D. AWS Network Access Control Lists."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which AWS feature should a customer leverage to achieve high availability of an application?",
+    "options": [
+      "A. AWS Direct Connect.",
+      "B. Availability Zones.",
+      "C. Data centers.",
+      "D. Amazon Virtual Private Cloud (Amazon VPC)."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "You have just finished writing your application code. Which service can be used to automate the deployment and scaling of your application?",
+    "options": [
+      "A. Amazon Simple Storage Service.",
+      "B. AWS Elastic Beanstalk.",
+      "C. AWS CodeCommit.",
+      "D. Amazon Elastic File System."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "A company has decided to migrate its Oracle database to AWS. Which AWS service can help achieve this without negatively impacting the functionality of the source database?",
+    "options": [
+      "A. AWS OpsWorks.",
+      "B. AWS Database Migration Service.",
+      "C. AWS Server Migration Service.",
+      "D. AWS Application Discovery Service."
+    ],
+    "correctAnswer": "B"
   }
 ]

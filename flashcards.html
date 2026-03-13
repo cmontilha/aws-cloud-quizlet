@@ -11,39 +11,117 @@
   </script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="font-inter bg-gray-50 text-gray-800">
-  <header class="sticky top-0 z-10 bg-white/80 backdrop-blur">
-    <div class="max-w-5xl mx-auto flex items-center justify-between p-4">
-      <h1 class="text-2xl font-bold"><a href="index.html">AWS Cloud Practitioner Study</a></h1>
-      <nav class="hidden md:flex space-x-4 text-lg">
-        <a class="hover:underline" href="index.html">Home</a>
-        <a class="hover:underline" href="vocabulary.html">Vocabulary</a>
-        <a class="hover:underline" href="flashcards.html">Flashcards</a>
-        <a class="hover:underline" href="exam.html">Practice Exams</a>
-        <a class="hover:underline" href="key-concepts.html">Key Concepts</a>
-        <a class="hover:underline" href="exam-tips.html">Exam Tips</a>
-      </nav>
-    </div>
-  </header>
-  <main>
-  <div class="flex flex-col items-center justify-center min-h-[80vh] px-4 text-center">
-    <div id="flash-progress" class="mb-2 text-sm text-gray-600"></div>
-    <div id="flashcard" class="flashcard w-full max-w-md h-64 mb-4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front card text-lg flex items-center justify-center"></div>
-        <div class="flashcard-back card text-lg flex items-center justify-center"></div>
+<body class="font-inter bg-gray-50 text-gray-800" data-page="flashcards" data-auth="protected">
+  <header class="sticky top-0 z-30 bg-white/80 backdrop-blur border-b border-indigo-100">
+    <div class="max-w-6xl mx-auto flex items-center justify-between p-4 gap-4">
+      <div class="flex items-center gap-3">
+        <a href="dashboard.html">
+          <img src="images/aws-logo.png" alt="AWS Logo" class="h-12 w-12 object-contain">
+        </a>
+        <h1 class="text-xl md:text-2xl font-bold"><a href="dashboard.html">AWS Cloud Practitioner Study</a></h1>
+      </div>
+      <div class="flex items-center gap-2">
+        <span id="nav-user-name" class="hidden md:inline text-sm text-gray-600"></span>
+        <button data-logout-btn class="auth-secondary-btn header-btn">Logout</button>
       </div>
     </div>
-    <div class="flex gap-4">
-      <button onclick="prevCard()">Previous</button>
-      <button onclick="flipCard()">Flip Card</button>
-      <button onclick="nextCard()">Next</button>
-      <button onclick="shuffleCards()">Shuffle</button>
-    </div>
-  </div>
+    <nav class="max-w-6xl mx-auto px-4 pb-3 flex flex-wrap gap-3 text-sm md:text-base">
+      <a class="topbar-link" href="dashboard.html">Home</a>
+      <a class="topbar-link" href="vocabulary.html">Vocabulary</a>
+      <a class="topbar-link topbar-link-active" href="flashcards.html">Flashcards</a>
+      <a class="topbar-link" href="exam.html">Practice Exams</a>
+      <a class="topbar-link" href="exam.html#review-section">Review Exams</a>
+      <a class="topbar-link" href="key-concepts.html">Key Concepts</a>
+      <a class="topbar-link" href="exam-tips.html">Exam Tips</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="max-w-6xl mx-auto px-4 py-8">
+      <div class="card static-card mb-5">
+        <p class="auth-kicker mb-1">ACTIVE RECALL MODE</p>
+        <h2 class="text-3xl font-bold mb-2">Flashcards</h2>
+        <p class="text-gray-600">Flip, mark your confidence, and focus your review set with smarter study controls.</p>
+      </div>
+
+      <div class="flashcards-layout">
+        <aside class="card static-card flashcards-panel">
+          <h3 class="text-lg font-semibold mb-3">Study Controls</h3>
+
+          <label for="flash-filter" class="text-sm font-semibold">Deck Filter</label>
+          <select id="flash-filter" class="flash-select mb-4">
+            <option value="all">All Cards</option>
+            <option value="unseen">Unseen</option>
+            <option value="review">Need Review</option>
+            <option value="known">Known</option>
+          </select>
+
+          <div class="flash-stats-grid">
+            <div class="flash-stat-card">
+              <p class="flash-stat-label">Known</p>
+              <p id="flash-known-count" class="flash-stat-value">0</p>
+            </div>
+            <div class="flash-stat-card">
+              <p class="flash-stat-label">Need Review</p>
+              <p id="flash-review-count" class="flash-stat-value">0</p>
+            </div>
+            <div class="flash-stat-card">
+              <p class="flash-stat-label">Unseen</p>
+              <p id="flash-unseen-count" class="flash-stat-value">0</p>
+            </div>
+          </div>
+
+          <div class="flash-mark-actions mt-4">
+            <button class="flash-btn flash-btn-known" onclick="markKnown()">I Know This</button>
+            <button class="flash-btn flash-btn-review" onclick="markReview()">Need Review</button>
+          </div>
+
+          <button class="flash-btn flash-btn-reset mt-3" onclick="resetFlashcardsProgress()">Reset Progress</button>
+
+          <div class="flash-hints mt-5">
+            <p class="font-semibold mb-2">Keyboard Shortcuts</p>
+            <p><strong>Space/F:</strong> Flip card</p>
+            <p><strong>← / →:</strong> Prev / Next</p>
+            <p><strong>K:</strong> Mark as known</p>
+            <p><strong>R:</strong> Mark for review</p>
+            <p><strong>S:</strong> Shuffle deck</p>
+          </div>
+        </aside>
+
+        <section class="flashcards-stage">
+          <div class="flash-meta-row">
+            <div>
+              <p id="flash-progress" class="flash-progress-text">Card 0 of 0</p>
+              <p id="flash-status-text" class="flash-status-text">Status: -</p>
+            </div>
+            <span id="flash-category" class="flash-category-pill">Category</span>
+          </div>
+
+          <div class="flash-progress-track" aria-hidden="true">
+            <div id="flash-session-bar" class="flash-progress-fill"></div>
+          </div>
+
+          <div id="flashcard" class="flashcard flashcard-large w-full h-[360px] md:h-[400px] mb-4">
+            <div class="flashcard-inner">
+              <div class="flashcard-front card text-2xl flex items-center justify-center"></div>
+              <div class="flashcard-back card text-lg flex items-center justify-center"></div>
+            </div>
+          </div>
+
+          <div class="flash-main-actions">
+            <button class="flash-btn" onclick="prevCard()">Previous</button>
+            <button class="flash-btn" onclick="flipCard()">Flip Card</button>
+            <button class="flash-btn" onclick="nextCard()">Next</button>
+            <button class="flash-btn" onclick="shuffleCards()">Shuffle</button>
+            <button class="flash-btn" onclick="randomCard()">Random</button>
+          </div>
+        </section>
+      </div>
+    </section>
   </main>
+
   <footer class="py-6 text-center bg-gray-100">
-    <a class="hover:underline" href="index.html">Back to Home</a>
+    <a class="hover:underline" href="dashboard.html">Back to Dashboard</a>
   </footer>
   <script src="js/main.js"></script>
 </body>

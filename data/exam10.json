@@ -58,7 +58,7 @@
     "correctAnswer": "B"
   },
   {
-    "question": "Which of the following is the customer\u2019s responsibility under the AWS shared responsibility model?",
+    "question": "Which of the following is the customer’s responsibility under the AWS shared responsibility model?",
     "options": [
       "A. Patching underlying infrastructure",
       "B. Physical security",
@@ -298,7 +298,7 @@
       "A. It supplies an online IT ticketing platform for resource requests.",
       "B. It supports automatic code validation services.",
       "C. It provides the ability to programmatically provision existing resources.",
-      "D. It automates the resource request process from a company\u2019s IT vendor list."
+      "D. It automates the resource request process from a company’s IT vendor list."
     ],
     "correctAnswer": "C"
   },
@@ -495,7 +495,7 @@
     "correctAnswer": "B"
   },
   {
-    "question": "A company\u2019s web application currently has light dependencies on underlying components so when one component fails the entire web application fails. Applying which AWS Cloud design principle will address the current design issue?",
+    "question": "A company’s web application currently has light dependencies on underlying components so when one component fails the entire web application fails. Applying which AWS Cloud design principle will address the current design issue?",
     "options": [
       "A. Implementing elasticity enabling the application to scale up or scale down as demand changes.",
       "B. Enabling several EC2 instances to run in parallel to achieve better performance.",
@@ -543,5 +543,167 @@
       "D. AWS Config."
     ],
     "correctAnswer": "B"
+  },
+  {
+    "question": "AWS has created a large number of Edge Locations as part of its Global Infrastructure. Which of the following is NOT a benefit of using Edge Locations?",
+    "options": [
+      "A. Edge locations are used by CloudFront to cache the most recent responses.",
+      "B. Edge locations are used by CloudFront to improve your end users’ experience when uploading files.",
+      "C. Edge locations are used by CloudFront to distribute traffic across multiple instances to reduce latency.",
+      "D. Edge locations are used by CloudFront to distribute content to global users with low latency."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Amazon EC2 instances are conceptually very similar to traditional servers. However, using Amazon EC2 server instances in the same manner as traditional hardware server instances is only a starting point. What are the main benefits of using the AWS EC2 instances instead of traditional servers? (Choose TWO)",
+    "options": [
+      "A. Improves Fault-Tolerance.",
+      "B. Provides your business with a seamless remote accessibility.",
+      "C. Prevents unauthorized users from getting into your network.",
+      "D. Provides automatic data backups.",
+      "E. Can be scaled manually in a shorter period of time."
+    ],
+    "correctAnswer": [
+      "A",
+      "E"
+    ]
+  },
+  {
+    "question": "An organization has decided to purchase an Amazon EC2 Reserved Instance (RI) for three years in order to reduce costs. It is possible that the application workloads could change during the reservation period. What is the EC2 Reserved Instance (RI) type that will allow the company to exchange the purchased reserved instance for another reserved instance with higher computing power if they need to?",
+    "options": [
+      "A. Elastic RI.",
+      "B. Premium RI.",
+      "C. Standard RI.",
+      "D. Convertible RI."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "A customer is seeking to store objects in their AWS environment and to make those objects downloadable over the internet. Which AWS Service can be used to accomplish this?",
+    "options": [
+      "A. Amazon EBS.",
+      "B. Amazon EFS.",
+      "C. Amazon S3.",
+      "D. Amazon Instance Store."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "An organization has a large number of technical employees who operate their AWS Cloud infrastructure. What does AWS provide to help organize them into teams and then assign the appropriate permissions for each team?",
+    "options": [
+      "A. IAM roles.",
+      "B. IAM users.",
+      "C. IAM user groups.",
+      "D. AWS Organizations."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Why would an organization decide to use AWS over an on-premises data center? (Choose TWO)",
+    "options": [
+      "A. Free commercial software licenses.",
+      "B. Free technical support.",
+      "C. Elastic resources.",
+      "D. On-site visits for auditing.",
+      "E. Cost Savings."
+    ],
+    "correctAnswer": [
+      "C",
+      "E"
+    ]
+  },
+  {
+    "question": "Which of the following EC2 instance purchasing options supports the Bring Your Own License (BYOL) model for almost every BYOL scenario?",
+    "options": [
+      "A. Dedicated Instances.",
+      "B. Dedicated Hosts.",
+      "C. On-demand Instances.",
+      "D. Reserved Instances."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "Which AWS Service is used to manage user permissions?",
+    "options": [
+      "A. Security Groups.",
+      "B. Amazon ECS.",
+      "C. AWS IAM.",
+      "D. AWS Support."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which of the following AWS Cloud services can be used to run a customer-managed relational database?",
+    "options": [
+      "A. Amazon EC2.",
+      "B. Amazon Route 53.",
+      "C. Amazon ElastiCache.",
+      "D. Amazon DynamoDB."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "Which of the following is an AWS Cloud architecture design principle?",
+    "options": [
+      "A. Implement single points of failure.",
+      "B. Implement loose coupling.",
+      "C. Implement monolithic design.",
+      "D. Implement vertical scaling."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "Which of the following services falls under the responsibility of the customer to maintain operating system configuration, security patching, and networking?",
+    "options": [
+      "A. Amazon RDS",
+      "B. Amazon EC2",
+      "C. Amazon ElastiCache",
+      "D. AWS Fargate"
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "In the AWS Shared responsibility Model, which of the following are the responsibility of the customer? (Choose TWO)",
+    "options": [
+      "A. Disk disposal.",
+      "B. Controlling physical access to compute resources.",
+      "C. Patching the Network infrastructure.",
+      "D. Setting password complexity rules.",
+      "E. Configuring network access rules."
+    ],
+    "correctAnswer": [
+      "D",
+      "E"
+    ]
+  },
+  {
+    "question": "You are facing a lot of problems with your current contact center. Which service provides a cloud-based contact center that can deliver a better service for your customers?",
+    "options": [
+      "A. Amazon Lightsail.",
+      "B. Amazon Connect.",
+      "C. AWS Direct Connect.",
+      "D. AWS Elastic Beanstalk."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "Which service provides a virtually unlimited amount of online highly durable object storage?",
+    "options": [
+      "A. Amazon Redshift.",
+      "B. Amazon Elastic File System (Amazon EFS).",
+      "C. Amazon Elastic Container Service (Amazon ECS).",
+      "D. Amazon S3."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "Which statement best describes the AWS Pay-As-You-Go pricing model?",
+    "options": [
+      "A. With AWS, you replace low upfront expenses with large variable payments.",
+      "B. With AWS, you replace low upfront expenses with large fixed payments.",
+      "C. With AWS, you replace large upfront expenses with low fixed payments.",
+      "D. With AWS, you replace large capital expenses with low variable payments."
+    ],
+    "correctAnswer": "D"
   }
 ]

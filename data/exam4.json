@@ -1,6 +1,6 @@
 [
   {
-    "question": "A developer needs to set up an SSL security certificate for a client\u2019s eCommerce website in order to use the HTTPS protocol. Which of the following AWS services can be used to deploy the required SSL server certificates? (Choose TWO)",
+    "question": "A developer needs to set up an SSL security certificate for a client’s eCommerce website in order to use the HTTPS protocol. Which of the following AWS services can be used to deploy the required SSL server certificates? (Choose TWO)",
     "options": [
       "A. Amazon Route 53.",
       "B. AWS ACM.",
@@ -140,7 +140,7 @@
     ]
   },
   {
-    "question": "What is the AWS\u2019 recommendation regarding access keys?",
+    "question": "What is the AWS’ recommendation regarding access keys?",
     "options": [
       "A. Delete all access keys and use passwords instead.",
       "B. Only share them with trusted people.",
@@ -378,7 +378,7 @@
     "correctAnswer": "A"
   },
   {
-    "question": "Both AWS and traditional IT distributors provide a wide range of virtual servers to meet their customers\u2019 requirements. What is the name of these virtual servers in AWS?",
+    "question": "Both AWS and traditional IT distributors provide a wide range of virtual servers to meet their customers’ requirements. What is the name of these virtual servers in AWS?",
     "options": [
       "A. Amazon EBS Snapshots.",
       "B. Amazon VPC.",
@@ -570,5 +570,167 @@
       "D. Amazon Chime."
     ],
     "correctAnswer": "B"
+  },
+  {
+    "question": "A Japanese company hosts their applications on Amazon EC2 instances in the Tokyo Region. The company has opened new branches in the United States, and the US users are complaining of high latency. What can the company do to reduce latency for the users in the US while minimizing costs?",
+    "options": [
+      "A. Applying the Amazon Connect latency-based routing policy.",
+      "B. Registering a new US domain name to serve the users in the US.",
+      "C. Building a new data center in the US and implementing a hybrid model.",
+      "D. Deploying new Amazon EC2 instances in a Region located in the US."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "Which of the following are factors should be considered for Amazon EBS pricing? (Choose TWO)",
+    "options": [
+      "A. The size of volumes provisioned per month.",
+      "B. The compute capacity you consume.",
+      "C. The amount of data you have stored in snapshots.",
+      "D. The compute time you consume.",
+      "E. The number of Snowball storage devices you request."
+    ],
+    "correctAnswer": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "question": "What does AWS Cost Explorer provide to help manage your AWS spend?",
+    "options": [
+      "A. Cost comparisons between AWS Cloud environments and on-premises environments.",
+      "B. Accurate estimates of AWS service costs based on your expected usage.",
+      "C. Consolidated billing.",
+      "D. Highly accurate cost forecasts for up to 12 months ahead."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "A company wants to expand from one AWS Region into a second AWS Region. What does the company need to do to start supporting the new Region?",
+    "options": [
+      "A. Contact an AWS Account Manager to sign a new contract.",
+      "B. Move an Availability Zone to the new Region.",
+      "C. Begin deploying resources in the second Region.",
+      "D. Download the AWS Management Console for the new Region."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "What is the AWS service that provides you the highest level of control over the underlying virtual infrastructure?",
+    "options": [
+      "A. Amazon Redshift.",
+      "B. Amazon DynamoDB.",
+      "C. Amazon EC2.",
+      "D. Amazon RDS."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which AWS service allows users to identify the changes made to a resource over time?",
+    "options": [
+      "A. Amazon Inspector.",
+      "B. AWS Config.",
+      "C. AWS Service Catalog.",
+      "D. AWS IAM."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "What costs are included when comparing AWS Total Cost of Ownership (TCO) with on-premises TCO?",
+    "options": [
+      "A. Project management.",
+      "B. Antivirus software licensing.",
+      "C. Data center security.",
+      "D. Software development."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which AWS service provides a simple and scalable shared file storage solution for use with Linux-based AWS and on-premises servers?",
+    "options": [
+      "A. Amazon S3.",
+      "B. Amazon Glacier.",
+      "C. Amazon EBS.",
+      "D. Amazon EFS."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "You have developed a web application targeting a global audience. Which of the following will help you achieve the highest redundancy and fault tolerance from an infrastructure perspective?",
+    "options": [
+      "A. There is no need to architect for these capabilities in AWS, as AWS is redundant by default.",
+      "B. Deploy the application in a single Availability Zone.",
+      "C. Deploy the application in multiple Availability Zones in a single AWS region.",
+      "D. Deploy the application in multiple Availability Zones in multiple AWS regions."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "Which AWS service provides cost-optimization recommendations?",
+    "options": [
+      "A. AWS Trusted Advisor.",
+      "B. AWS Pricing Calculator.",
+      "C. Amazon QuickSight.",
+      "D. AWS X-Ray."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "You are using several on-demand EC2 Instances to run your development environment. What is the best way to reduce your charges when these instances are not in use?",
+    "options": [
+      "A. Deleting all EBS volumes attached to the instances.",
+      "B. You cannot minimize charges for on-demand instances.",
+      "C. Terminating the instances.",
+      "D. Stopping the instances."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "An organization uses a hybrid cloud architecture to run their business. Which AWS service enables them to deploy their applications to any AWS or on-premises server?",
+    "options": [
+      "A. Amazon Kinesis.",
+      "B. Amazon QuickSight.",
+      "C. AWS CodeDeploy.",
+      "D. Amazon Athena."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which of the following services can help protect your web applications from SQL injection and other vulnerabilities in your application code?",
+    "options": [
+      "A. Amazon Cognito.",
+      "B. AWS IAM.",
+      "C. Amazon Aurora.",
+      "D. AWS WAF."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "What are some key design principles for designing public cloud systems? (Choose TWO)",
+    "options": [
+      "A. Reserved capacity instead of on demand.",
+      "B. Loose coupling over tight coupling.",
+      "C. Servers instead of managed services.",
+      "D. Disposable resources instead of fixed servers.",
+      "E. Multi-AZ deployments instead of multi-region deployments."
+    ],
+    "correctAnswer": [
+      "B",
+      "D"
+    ]
+  },
+  {
+    "question": "Which benefits are included with the AWS Business Support plan? (Select TWO)",
+    "options": [
+      "A. 24/7 assistance by way of live chat or a telephone call.",
+      "B. Support from a dedicated AWS Technical Account Manager.",
+      "C. An unlimited number of cases and contacts.",
+      "D. 15-minute response time for production system interruption cases.",
+      "E. Annual operational reviews with AWS Solutions Architects."
+    ],
+    "correctAnswer": [
+      "A",
+      "C"
+    ]
   }
 ]

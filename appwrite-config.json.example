@@ -1,0 +1,5 @@
+{
+  "endpoint": "https://nyc.cloud.appwrite.io/v1",
+  "projectId": "69b443ad0007ac25103a",
+  "sdkUrl": "https://cdn.jsdelivr.net/npm/appwrite@13.0.1"
+}

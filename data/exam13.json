@@ -68,7 +68,10 @@
       "D. Software-as-a-service",
       "E. Hybrid"
     ],
-    "correctAnswer": ["A", "C"]
+    "correctAnswer": [
+      "A",
+      "C"
+    ]
   },
   {
     "question": "The AWS Cloud’s multiple Regions are an example of:",
@@ -89,7 +92,10 @@
       "D. Amazon Glacier",
       "E. Amazon CloudFront"
     ],
-    "correctAnswer": ["B", "E"]
+    "correctAnswer": [
+      "B",
+      "E"
+    ]
   },
   {
     "question": "Web servers running on Amazon EC2 access a legacy application running in a corporate data center. What term would describe this model?",
@@ -140,7 +146,10 @@
       "D. Automated penetration testing",
       "E. Amazon S3 copyrighted content detection"
     ],
-    "correctAnswer": ["B", "C"]
+    "correctAnswer": [
+      "B",
+      "C"
+    ]
   },
   {
     "question": "Which AWS managed service is used to host databases?",
@@ -271,7 +280,10 @@
       "D. AWS Batch",
       "E. AWS X-Ray"
     ],
-    "correctAnswer": ["B", "C"]
+    "correctAnswer": [
+      "B",
+      "C"
+    ]
   },
   {
     "question": "Which Amazon EC2 pricing model adjusts based on supply and demand of EC2 instances?",
@@ -292,7 +304,10 @@
       "D. Rely on individual components.",
       "E. Design for scalability."
     ],
-    "correctAnswer": ["C", "E"]
+    "correctAnswer": [
+      "C",
+      "E"
+    ]
   },
   {
     "question": "Which is the MINIMUM AWS Support plan that allows for one-hour target response time for support cases?",
@@ -383,7 +398,10 @@
       "D. Amazon EC2 Auto Scaling",
       "E. AWS Management Console"
     ],
-    "correctAnswer": ["B", "E"]
+    "correctAnswer": [
+      "B",
+      "E"
+    ]
   },
   {
     "question": "Which of the following is an AWS Cloud architecture design principle?",
@@ -404,7 +422,10 @@
       "D. Enable Amazon CloudFront.",
       "E. Activate multi-factor authentication (MFA) for privileged users."
     ],
-    "correctAnswer": ["B", "E"]
+    "correctAnswer": [
+      "B",
+      "E"
+    ]
   },
   {
     "question": "Which service provides a hybrid storage service that enables on-premises applications to seamlessly use cloud storage?",
@@ -485,7 +506,10 @@
       "D. AWS Forums",
       "E. AWS Classroom Training"
     ],
-    "correctAnswer": ["B", "E"]
+    "correctAnswer": [
+      "B",
+      "E"
+    ]
   },
   {
     "question": "Which of the following features can be configured through the Amazon Virtual Private Cloud (Amazon VPC) Dashboard? (Select TWO.)",
@@ -496,7 +520,10 @@
       "D. Subnets",
       "E. Elastic Load Balancing"
     ],
-    "correctAnswer": ["C", "D"]
+    "correctAnswer": [
+      "C",
+      "D"
+    ]
   },
   {
     "question": "If each department within a company has its own AWS account, what is one way to enable consolidated billing?",
@@ -507,5 +534,180 @@
       "D. Put all invoices into one Amazon Simple Storage Service (Amazon S3) bucket, load data into Amazon Redshift, and then run a billing report."
     ],
     "correctAnswer": "C"
+  },
+  {
+    "question": "What is the framework created by AWS Professional Services that helps organizations design a road map to successful cloud adoption?",
+    "options": [
+      "A. AWS Secrets Manager.",
+      "B. AWS WAF.",
+      "C. AWS CAF.",
+      "D. Amazon EFS."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which AWS tools assist with estimating costs? (Select three.)",
+    "options": [
+      "A. Detailed billing report",
+      "B. Cost allocation tags",
+      "C. AWS Simple Monthly Calculator",
+      "D. AWS Total Cost of Ownership (TCO) Calculator",
+      "E. Cost Eliminator"
+    ],
+    "correctAnswer": [
+      "B",
+      "C",
+      "D"
+    ]
+  },
+  {
+    "question": "Which AWS characteristics make AWS cost effective for a workload with dynamic user demand? (Select TWO)",
+    "options": [
+      "A. High availability.",
+      "B. Shared security model.",
+      "C. Elasticity.",
+      "D. Pay-as-you-go pricing.",
+      "E. Reliability."
+    ],
+    "correctAnswer": [
+      "C",
+      "D"
+    ]
+  },
+  {
+    "question": "Under the shared responsibility model, which of the following is the customer responsible for?",
+    "options": [
+      "A. Ensuring that disk drives are wiped after use.",
+      "B. Ensuring that firmware is updated on hardware devices.",
+      "C. Ensuring that data is encrypted at rest.",
+      "D. Ensuring that network cables are category six or higher."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Under the Shared Responsibility Model, which of the following controls do customers fully inherit from AWS? (Choose TWO)",
+    "options": [
+      "A. Patch management controls.",
+      "B. Database controls.",
+      "C. Awareness & Training.",
+      "D. Environmental controls.",
+      "E. Physical controls."
+    ],
+    "correctAnswer": [
+      "D",
+      "E"
+    ]
+  },
+  {
+    "question": "Which of the following Amazon EC2 pricing models allow customers to use existing server-bound software licenses?",
+    "options": [
+      "A. Spot Instances.",
+      "B. Reserved Instances.",
+      "C. Dedicated Hosts.",
+      "D. On-Demand Instances."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "You want to create a backup of your data in another geographical location. Where should you create this backup?",
+    "options": [
+      "A. In another Edge location.",
+      "B. In another Region.",
+      "C. In another VPC.",
+      "D. In another Availability Zone."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "Which service is used to ensure that messages between software components are not lost if one or more components fail?",
+    "options": [
+      "A. Amazon SQS.",
+      "B. Amazon SES.",
+      "C. AWS Direct Connect.",
+      "D. Amazon Connect."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "Which of the following AWS services can help you perform security analysis and regulatory compliance auditing? (Choose TWO)",
+    "options": [
+      "A. Amazon Inspector.",
+      "B. AWS Virtual Private Gateway.",
+      "C. AWS Batch.",
+      "D. Amazon ECS.",
+      "E. AWS Config."
+    ],
+    "correctAnswer": [
+      "A",
+      "E"
+    ]
+  },
+  {
+    "question": "Which of the following AWS Support Plans gives you 24/7 access to Cloud Support Engineers via email & phone? (Choose TWO)",
+    "options": [
+      "A. Developer.",
+      "B. Premium.",
+      "C. Enterprise.",
+      "D. Standard.",
+      "E. Business."
+    ],
+    "correctAnswer": [
+      "C",
+      "E"
+    ]
+  },
+  {
+    "question": "Which of the following security measures protect access to an AWS account? (Select TWO)",
+    "options": [
+      "A. Enable AWS CloudTrail.",
+      "B. Grant least privilege access to IAM users.",
+      "C. Create one IAM user and share with many developers and users.",
+      "D. Enable Amazon CloudFront.",
+      "E. Activate multi-factor authentication (MFA) for privileged users."
+    ],
+    "correctAnswer": [
+      "B",
+      "E"
+    ]
+  },
+  {
+    "question": "Which AWS service provides cost-optimization recommendations?",
+    "options": [
+      "A. AWS Trusted Advisor.",
+      "B. AWS Pricing Calculator.",
+      "C. Amazon QuickSight.",
+      "D. AWS X-Ray."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "What AWS team assists customers with accelerating cloud adoption through paid engagements in any of several specialty practice areas?",
+    "options": [
+      "A. AWS Enterprise Support.",
+      "B. AWS Solutions Architects.",
+      "C. AWS Professional Services.",
+      "D. AWS Account Managers."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which of the following services allows you to install and run custom relational database software?",
+    "options": [
+      "A. Amazon EC2.",
+      "B. Amazon Cognito.",
+      "C. Amazon RDS.",
+      "D. Amazon Inspector."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "An organization has a legacy application designed using monolithic-based architecture. Which AWS Service can be used to decouple the components of the application?",
+    "options": [
+      "A. Amazon SQS.",
+      "B. Virtual Private Gateway.",
+      "C. AWS Artifact.",
+      "D. Amazon CloudFront."
+    ],
+    "correctAnswer": "A"
   }
 ]

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AWS Cloud Quizlet</title>
+  <title>AWS Cloud Quizlet | Landing</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -11,57 +11,91 @@
   </script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="font-inter bg-gray-50 text-gray-800">
-  <header class="sticky top-0 z-10 bg-white/80 backdrop-blur">
-    <div class="max-w-5xl mx-auto flex items-center justify-between p-4">
-      <div class="flex items-center space-x-3">
+<body class="font-inter bg-gray-50 text-gray-800" data-page="landing" data-auth="public">
+  <header class="sticky top-0 z-30 bg-white/80 backdrop-blur border-b border-indigo-100">
+    <div class="max-w-6xl mx-auto flex items-center justify-between p-4 gap-4">
+      <div class="flex items-center gap-3">
         <a href="index.html">
-          <img src="images/aws-logo.png" alt="AWS Logo" class="h-16 w-16 object-contain">
+          <img src="images/aws-logo.png" alt="AWS Logo" class="h-12 w-12 object-contain">
         </a>
-        <h1 class="text-2xl font-bold">
-          <a href="index.html">AWS Cloud Practitioner Study</a>
+        <h1 class="text-xl md:text-2xl font-bold">
+          <a href="index.html">AWS Cloud Quizlet</a>
         </h1>
       </div>
-      <nav class="hidden md:flex space-x-4 text-lg">
-        <a class="hover:underline" href="index.html">Home</a>
-        <a class="hover:underline" href="vocabulary.html">Vocabulary</a>
-        <a class="hover:underline" href="flashcards.html">Flashcards</a>
-        <a class="hover:underline" href="exam.html">Practice Exams</a>
-        <a class="hover:underline" href="key-concepts.html">Key Concepts</a>
-        <a class="hover:underline" href="exam-tips.html">Exam Tips</a>
-      </nav>
+      <div class="flex items-center gap-2">
+        <a href="login.html" class="btn-link btn-link-secondary">Login</a>
+        <a href="register.html" class="btn-link btn-link-primary">Register</a>
+      </div>
     </div>
   </header>
-  <main>
-  <section class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white pt-12 pb-20">
-    <div class="max-w-3xl mx-auto text-center px-4">
-      <div class="mt-6 mb-6 flex justify-center">
-        <img src="images/aws-logo.png" alt="AWS Cloud Practitioner Logo" class="h-24 w-24 object-contain">
+
+  <main class="landing-main">
+    <section class="landing-hero">
+      <div class="max-w-6xl mx-auto px-4 py-20 relative z-10">
+        <div class="max-w-3xl">
+          <p class="landing-kicker">AWS CLOUD PRACTITIONER PLATFORM</p>
+          <h2 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-5">Study smarter for AWS Cloud with a modern, focused learning workflow.</h2>
+          <p class="text-indigo-100 text-lg md:text-xl mb-8">A complete platform for AWS Cloud Practitioner preparation, with guided vocabulary, flashcards, practice exams, review insights, key concepts, and exam tips.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="register.html" class="btn-link btn-link-primary">Start Free</a>
+            <a href="login.html" class="btn-link btn-link-secondary">I Already Have an Account</a>
+          </div>
+          <p id="landing-auth-info" class="landing-auth-note mt-4"></p>
+        </div>
       </div>
-      <h2 class="text-4xl font-bold mb-4">Welcome to Your AWS Study Hub</h2>
-      <p class="mb-6">Prepare for the AWS Certified Cloud Practitioner exam with vocabulary lists, practice exams, flashcards, key concepts and more.</p>
-      <a href="exam.html" class="inline-block bg-white text-indigo-600 font-semibold px-6 py-3 rounded shadow hover:shadow-lg transition">Start Practicing</a>
-    </div>
-  </section>
-  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 p-4">
-    <a href="vocabulary.html" class="card block p-6 rounded-lg shadow hover:shadow-lg transition bg-white">
-      <h3 class="text-xl font-semibold mb-2">Vocabulary</h3>
-      <p>Browse key terms with definitions.</p>
-    </a>
-    <a href="flashcards.html" class="card block p-6 rounded-lg shadow hover:shadow-lg transition bg-white">
-      <h3 class="text-xl font-semibold mb-2">Flashcards</h3>
-      <p>Flip through cards to test your memory.</p>
-    </a>
-    <a href="exam.html" class="card block p-6 rounded-lg shadow hover:shadow-lg transition bg-white">
-      <h3 class="text-xl font-semibold mb-2">Practice Exams</h3>
-      <p>Take timed exams and track your progress.</p>
-    </a>
-    <a href="exam-tips.html" class="card block p-6 rounded-lg shadow hover:shadow-lg transition bg-white">
-      <h3 class="text-xl font-semibold mb-2">Exam Tips</h3>
-      <p>Helpful hints for exam day success.</p>
-    </a>
-  </div>
+      <div class="landing-orb orb-a"></div>
+      <div class="landing-orb orb-b"></div>
+      <div class="landing-grid-overlay"></div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 py-14">
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="card feature-card static-card">
+          <p class="feature-title">Purpose</p>
+          <p>Built to help you prepare for the AWS Certified Cloud Practitioner exam with practical, exam-focused content.</p>
+        </div>
+        <div class="card feature-card static-card">
+          <p class="feature-title">Learning Flow</p>
+          <p>Move from fundamentals to simulation: concepts, terms, retention practice, full exams, and review.</p>
+        </div>
+        <div class="card feature-card static-card">
+          <p class="feature-title">Outcome</p>
+          <p>Improve confidence, identify weak topics, and train under real exam timing constraints.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 pb-20">
+      <h3 class="text-3xl font-bold mb-6">Platform Features</h3>
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
+        <article class="card feature-box">
+          <h4>Vocabulary</h4>
+          <p>Browse key AWS terms with definitions and category grouping.</p>
+        </article>
+        <article class="card feature-box">
+          <h4>Flashcards</h4>
+          <p>Flip cards, shuffle sets, and reinforce memory through repetition.</p>
+        </article>
+        <article class="card feature-box">
+          <h4>Practice Exams</h4>
+          <p>Run full 65-question, 90-minute simulations with realistic pacing.</p>
+        </article>
+        <article class="card feature-box">
+          <h4>Review Exams</h4>
+          <p>Inspect completed attempts, score percentage, and question-by-question corrections.</p>
+        </article>
+        <article class="card feature-box">
+          <h4>Key Concepts</h4>
+          <p>Study domains and core ideas mapped to the certification blueprint.</p>
+        </article>
+        <article class="card feature-box">
+          <h4>Exam Tips</h4>
+          <p>Get strategy, timing guidance, and practical tips for test day execution.</p>
+        </article>
+      </div>
+    </section>
   </main>
+
   <footer class="py-6 text-center bg-gray-100">
     <a class="mx-2 hover:underline" href="https://github.com/cmontilha" aria-label="GitHub">GitHub</a>
     |

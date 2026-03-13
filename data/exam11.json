@@ -24,7 +24,7 @@
     ]
   },
   {
-    "question": "Which of the following will enhance the security of access to the AWS Management Console\u2019? (Select TWO)",
+    "question": "Which of the following will enhance the security of access to the AWS Management Console’? (Select TWO)",
     "options": [
       "A. AWS Secrets Manager.",
       "B. AWS Certificate Manager.",
@@ -68,7 +68,7 @@
       "B. Service limits increasing by default in all accounts.",
       "C. A fixed discount on the monthly bill.",
       "D. Potential volume discounts, as usage in all accounts is combined.",
-      "E. The automatic extension of the master account\u2019s AWS support plan to all accounts."
+      "E. The automatic extension of the master account’s AWS support plan to all accounts."
     ],
     "correctAnswer": [
       "A",
@@ -430,7 +430,7 @@
     "correctAnswer": "A"
   },
   {
-    "question": "Which AWS service provides a customized view of the health of specific AWS services that power a customer\u2019s workloads running on AWS?",
+    "question": "Which AWS service provides a customized view of the health of specific AWS services that power a customer’s workloads running on AWS?",
     "options": [
       "A. AWS Service Health Dashboard.",
       "B. AWS X-Ray.",
@@ -443,7 +443,7 @@
     "question": "One of the advantages to moving infrastructure from an on-premises data center to the AWS Cloud is:",
     "options": [
       "A. It allows the business to eliminate IT bills.",
-      "B. It allows the business to put a server in each customer\u2019s data center.",
+      "B. It allows the business to put a server in each customer’s data center.",
       "C. It allows the business to focus on business activities.",
       "D. It allows the business to leave servers unpatched."
     ],
@@ -484,19 +484,19 @@
     "options": [
       "A. A company wants to move its main website to AWS from an on-premises web server.",
       "B. A company has a number of application services whose Service Level Agreement (SLA) requires 99.999% uptime.",
-      "C. A company\u2019s heavily used legacy database is currently running on-premises.",
+      "C. A company’s heavily used legacy database is currently running on-premises.",
       "D. A company has a number of infrequent, interruptible jobs that are currently using On-Demand Instances."
     ],
     "correctAnswer": "D"
   },
   {
-    "question": "A customer is deploying a new application and needs to choose an AWS Region. Which of the following factors could influence the customer\u2019s decision? (Select TWO)",
+    "question": "A customer is deploying a new application and needs to choose an AWS Region. Which of the following factors could influence the customer’s decision? (Select TWO)",
     "options": [
       "A. Reduced latency to users.",
-      "B. The application\u2019s presentation in the local language.",
+      "B. The application’s presentation in the local language.",
       "C. Data sovereignty compliance.",
       "D. Cooling costs in hotter climates.",
-      "E. Proximity to the customer\u2019s office for on-site visits."
+      "E. Proximity to the customer’s office for on-site visits."
     ],
     "correctAnswer": [
       "A",
@@ -504,7 +504,7 @@
     ]
   },
   {
-    "question": "Which AWS service provides alerts when an AWS event may impact a company\u2019s AWS resources?",
+    "question": "Which AWS service provides alerts when an AWS event may impact a company’s AWS resources?",
     "options": [
       "A. AWS Personal Health Dashboard.",
       "B. AWS Service Health Dashboard.",
@@ -524,7 +524,7 @@
     "correctAnswer": "D"
   },
   {
-    "question": "Which service\u2019s PRIMARY purpose is software version control?",
+    "question": "Which service’s PRIMARY purpose is software version control?",
     "options": [
       "A. Amazon CodeStar.",
       "B. AWS Command Line Interface (AWS CLI).",
@@ -546,5 +546,159 @@
       "B",
       "D"
     ]
+  },
+  {
+    "question": "Which AWS service can be used to query stored datasets directly from Amazon S3 using standard SQL?",
+    "options": [
+      "A. AWS Glue.",
+      "B. AWS Data Pipeline.",
+      "C. Amazon CloudSearch.",
+      "D. Amazon Athena."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "Why are Serverless Architectures more economical than Server-based Architectures?",
+    "options": [
+      "A. Serverless Architectures use new powerful computing devices.",
+      "B. With the Server-based Architectures, compute resources continue to run all the time but with serverless architecture, compute resources are only used when code is being executed.",
+      "C. When you reserve serverless capacity, you will get large discounts compared to server reservation.",
+      "D. With Serverless Architectures you have the ability to scale automatically up or down as demand changes."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "Which of the following would you use to manage your encryption keys in the AWS Cloud? (Choose TWO)",
+    "options": [
+      "A. AWS KMS.",
+      "B. AWS Certificate Manager.",
+      "C. AWS CodeDeploy.",
+      "D. AWS CodeCommit.",
+      "E. CloudHSM."
+    ],
+    "correctAnswer": [
+      "A",
+      "E"
+    ]
+  },
+  {
+    "question": "Which AWS service identifies security groups that allow unrestricted access to a user’s AWS resources?",
+    "options": [
+      "A. AWS Trusted Advisor.",
+      "B. Amazon Inspector.",
+      "C. Amazon CloudWatch.",
+      "D. AWS CloudTrail."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "Which AWS service can be used to send promotional text messages (SMS) to more than 200 countries worldwide?",
+    "options": [
+      "A. Amazon Simple Email Service (Amazon SES).",
+      "B. Amazon Simple Storage Service (Amazon S3).",
+      "C. Amazon Simple Notification Service (Amazon SNS).",
+      "D. Amazon Simple Queue Service (Amazon SQS)."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "How many Availability Zones should compute resources be provisioned across to achieve high availability?",
+    "options": [
+      "A. A minimum of one.",
+      "B. A minimum of two.",
+      "C. A minimum of three.",
+      "D. A minimum of four or more."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "Your web application currently faces performance issues and suffers from long load times. Which of the following AWS services could help fix these issues and improve performance?",
+    "options": [
+      "A. Amazon Detective.",
+      "B. AWS X-Ray.",
+      "C. AWS Security Hub.",
+      "D. AWS Shield."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "You are working as a site reliability engineer (SRE) in an AWS environment, which of the following services helps monitor your applications?",
+    "options": [
+      "A. Amazon CloudWatch.",
+      "B. Amazon CloudSearch.",
+      "C. Amazon Elastic MapReduce.",
+      "D. Amazon CloudHSM."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "Which of the following components of the AWS Global Infrastructure consists of one or more discrete data centers interconnected through low latency links?",
+    "options": [
+      "A. Availability Zone",
+      "B. Edge location",
+      "C. Region",
+      "D. Private networking"
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "A company is planning to host an educational website on AWS. Their video courses will be streamed all around the world. Which of the following AWS services will help achieve high transfer speeds?",
+    "options": [
+      "A. Amazon SNS.",
+      "B. Amazon Kinesis Video Streams.",
+      "C. AWS CloudFormation.",
+      "D. Amazon CloudFront."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "The AWS Cloud’s multiple Regions are an example of:",
+    "options": [
+      "A. Agility.",
+      "B. Global infrastructure.",
+      "C. Elasticity.",
+      "D. Pay-as-you-go pricing."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "A company has deployed a new web application on multiple Amazon EC2 instances. Which of the following should they use to ensure that the incoming HTTP traffic is distributed evenly across the instances?",
+    "options": [
+      "A. AWS EC2 Auto Recovery.",
+      "B. AWS Auto Scaling.",
+      "C. AWS Network Load Balancer.",
+      "D. AWS Application Load Balancer."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "Which AWS Service helps enterprises extend their on-premises storage to AWS in a cost-effective manner?",
+    "options": [
+      "A. AWS Data Pipeline.",
+      "B. AWS Storage Gateway.",
+      "C. Amazon Aurora.",
+      "D. Amazon EFS."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "What costs are included when comparing AWS Total Cost of Ownership (TCO) with on-premises TCO?",
+    "options": [
+      "A. Project management.",
+      "B. Antivirus software licensing.",
+      "C. Data center security.",
+      "D. Software development."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which AWS Service can be used to register a new domain name?",
+    "options": [
+      "A. Amazon Personalize.",
+      "B. Amazon Route 53.",
+      "C. AWS KMS.",
+      "D. AWS Config."
+    ],
+    "correctAnswer": "B"
   }
 ]

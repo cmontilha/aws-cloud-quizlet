@@ -18,7 +18,10 @@
       "D. 24x7 access to the TAM feature.",
       "E. Partial access to the core Trusted Advisor checks."
     ],
-    "correctAnswer": ["A", "C"]
+    "correctAnswer": [
+      "A",
+      "C"
+    ]
   },
   {
     "question": "A company is developing a mobile application and wants to allow users to use their Amazon, Apple, Facebook, or Google identities to authenticate to the application. Which AWS Service should the company use for this purpose?",
@@ -49,7 +52,10 @@
       "D. Eliminates the need to guess on infrastructure capacity needs.",
       "E. Enables customers to trade their capital expenses for operational expenses."
     ],
-    "correctAnswer": ["D", "E"]
+    "correctAnswer": [
+      "D",
+      "E"
+    ]
   },
   {
     "question": "A customer is planning to migrate their Microsoft SQL Server databases to AWS. Which AWS Services can the customer use to run their Microsoft SQL Server database on AWS? (Choose TWO)",
@@ -60,7 +66,10 @@
       "D. AWS Database Migration service (DMS).",
       "E. AWS Lambda."
     ],
-    "correctAnswer": ["B", "C"]
+    "correctAnswer": [
+      "B",
+      "C"
+    ]
   },
   {
     "question": "Which AWS Service can perform health checks on Amazon EC2 instances?",
@@ -91,7 +100,10 @@
       "D. MySQL on Amazon EC2.",
       "E. Amazon RDS for MySQL."
     ],
-    "correctAnswer": ["A", "E"]
+    "correctAnswer": [
+      "A",
+      "E"
+    ]
   },
   {
     "question": "A company’s AWS workflow requires that it periodically perform large-scale image and video processing jobs. The customer is seeking to minimize cost and has stated that the amount of time it takes to process these jobs is not critical, but that cost minimization is the most important factor in designing the solution. Which EC2 instance class is best suited for this processing?",
@@ -132,7 +144,10 @@
       "D. It allows you to model your entire infrastructure in just a text file.",
       "E. It compiles and builds application code in a timely manner."
     ],
-    "correctAnswer": ["C", "D"]
+    "correctAnswer": [
+      "C",
+      "D"
+    ]
   },
   {
     "question": "Which of the following is a cloud computing deployment model that connects infrastructure and applications between cloud-based resources and existing resources not located in the cloud?",
@@ -233,7 +248,10 @@
       "D. The compute time you consume.",
       "E. The number of Snowball storage devices you request."
     ],
-    "correctAnswer": ["A", "C"]
+    "correctAnswer": [
+      "A",
+      "C"
+    ]
   },
   {
     "question": "You have just set up your AWS environment and have created six IAM user accounts for the DevOps team. What is the AWS recommendation when granting permissions to these IAM accounts?",
@@ -254,7 +272,10 @@
       "D. Data Transfer Out charges.",
       "E. The number of IAM roles provisioned."
     ],
-    "correctAnswer": ["A", "D"]
+    "correctAnswer": [
+      "A",
+      "D"
+    ]
   },
   {
     "question": "Who from the following will get the largest discount?",
@@ -277,7 +298,7 @@
     "correctAnswer": "D"
   },
   {
-    "question": "What does the term \u201cEconomies of scale\u201d mean?",
+    "question": "What does the term “Economies of scale” mean?",
     "options": [
       "A. It means that you save more when you consume more.",
       "B. It means as more time passes using AWS, you pay more for its services.",
@@ -325,7 +346,10 @@
       "D. AWS Trusted Advisor.",
       "E. Amazon Cognito."
     ],
-    "correctAnswer": ["A", "D"]
+    "correctAnswer": [
+      "A",
+      "D"
+    ]
   },
   {
     "question": "Which of the following AWS services uses Puppet to automate how EC2 instances are configured?",
@@ -356,7 +380,10 @@
       "D. AWS Fargate.",
       "E. Amazon EMR."
     ],
-    "correctAnswer": ["A", "E"]
+    "correctAnswer": [
+      "A",
+      "E"
+    ]
   },
   {
     "question": "What best describes penetration testing?",
@@ -377,7 +404,10 @@
       "D. Enables you to easily run and scale Apache Spark, Hadoop,and other Big Data frameworks.",
       "E. Enables you to easily run and manage Docker containers."
     ],
-    "correctAnswer": ["C", "D"]
+    "correctAnswer": [
+      "C",
+      "D"
+    ]
   },
   {
     "question": "Your CTO has asked you to contact AWS support using the chat feature to ask for guidance related to EBS. However, when you open the AWS support center you can’t see a way to contact support via Chat. What should you do?",
@@ -418,7 +448,10 @@
       "D. Access management.",
       "E. Management of firewall rules."
     ],
-    "correctAnswer": ["A", "C"]
+    "correctAnswer": [
+      "A",
+      "C"
+    ]
   },
   {
     "question": "Which of the following strategies help analyze costs in AWS?",
@@ -489,7 +522,10 @@
       "D. Manages global application traffic through a variety of routing types.",
       "E. Provides infrastructure security optimization recommendations."
     ],
-    "correctAnswer": ["C", "D"]
+    "correctAnswer": [
+      "C",
+      "D"
+    ]
   },
   {
     "question": "You want to transfer 200 Terabytes of data from on-premises locations to the AWS Cloud, which of the following can do the job in a cost-effective way?",
@@ -508,6 +544,160 @@
       "B. Amazon Athena.",
       "C. AWS Cloud9.",
       "D. Amazon ElastiCache for Redis."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "Which of the following is an important architectural design principle when designing cloud applications?",
+    "options": [
+      "A. Use multiple Availability Zones.",
+      "B. Use tightly coupled components.",
+      "C. Use open source software.",
+      "D. Provision extra capacity."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "How does AWS help customers achieve compliance in the cloud?",
+    "options": [
+      "A. It’s not possible to meet regulatory compliance requirements in the Cloud.",
+      "B. AWS applies the most common Cloud security standards, and is responsible for complying with customers’ applicable laws and regulations.",
+      "C. AWS has many common assurance certifications such as ISO 9001 and HIPAA.",
+      "D. Many AWS services are assessed regularly to comply with local laws and regulations."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which of the following services allows you to run containerized applications on a cluster of EC2 instances?",
+    "options": [
+      "A. Amazon ECS.",
+      "B. AWS Data Pipeline.",
+      "C. AWS Cloud9.",
+      "D. AWS Personal Health Dashboard."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "You have set up consolidated billing for several AWS accounts. One of the accounts has purchased a number of reserved instances for 3 years. Which of the following is true regarding this scenario?",
+    "options": [
+      "A. The Reserved Instance discounts can only be shared with the master account.",
+      "B. All accounts can receive the hourly cost benefit of the Reserved Instances.",
+      "C. The purchased instances will have better performance than On-demand instances.",
+      "D. There are no cost benefits from using consolidated billing; It is for informational purposes only."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "Which of the following AWS services can be used to serve large amounts of online video content with the lowest possible latency? (Select TWO.)",
+    "options": [
+      "A. AWS Storage Gateway",
+      "B. Amazon S3",
+      "C. Amazon Elastic File System (EFS)",
+      "D. Amazon Glacier",
+      "E. Amazon CloudFront"
+    ],
+    "correctAnswer": [
+      "B",
+      "E"
+    ]
+  },
+  {
+    "question": "Which of the following AWS security features is associated with an EC2 instance and functions to filter incoming traffic requests?",
+    "options": [
+      "A. AWS X-Ray.",
+      "B. Network ACL.",
+      "C. Security Groups.",
+      "D. VPC Flow logs."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "What is the AWS feature that provides an additional level of security above the default authentication mechanism of usernames and passwords?",
+    "options": [
+      "A. Encrypted keys.",
+      "B. Email verification.",
+      "C. AWS KMS.",
+      "D. AWS MFA."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "An external auditor is requesting a log of all accesses to the AWS resources in the company’s account. Which of the following services will provide the auditor with the requested information?",
+    "options": [
+      "A. AWS CloudTrail.",
+      "B. Amazon CloudFront.",
+      "C. AWS CloudFormation.",
+      "D. Amazon CloudWatch."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "Which of the following services allows you to install and run custom relational database software?",
+    "options": [
+      "A. Amazon EC2.",
+      "B. Amazon Cognito.",
+      "C. Amazon RDS.",
+      "D. Amazon Inspector."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "Which of the following is an AWS managed Domain Name System (DNS) web service?",
+    "options": [
+      "A. Amazon Route 53.",
+      "B. Amazon Neptune.",
+      "C. Amazon SageMaker.",
+      "D. Amazon Lightsail."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "How does AWS notify customers about security and privacy events pertaining to AWS services?",
+    "options": [
+      "A. Using the AWS ACM service.",
+      "B. Using Security Bulletins.",
+      "C. Using the AWS Management Console.",
+      "D. Using Compliance Resources."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "Why is it beneficial to use Elastic Load Balancers with applications?",
+    "options": [
+      "A. They allow for the conversion from Application Load.",
+      "B. Balancers to Classic Load Balancers.",
+      "C. They are capable of handling constant changes in network traffic patterns.",
+      "D. They automatically adjust capacity. They are provided at no charge to users."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "What AWS team assists customers with accelerating cloud adoption through paid engagements in any of several specialty practice areas?",
+    "options": [
+      "A. AWS Enterprise Support.",
+      "B. AWS Solutions Architects.",
+      "C. AWS Professional Services.",
+      "D. AWS Account Managers."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which of the following services is in the category of AWS serverless platform?",
+    "options": [
+      "A. Amazon EMR.",
+      "B. Elastic Load Balancing.",
+      "C. AWS Lambda.",
+      "D. AWS Mobile Hub."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "You are planning to launch an advertising campaign over the coming weekend to promote a new digital product. It is expected that there will be heavy spikes in load during the campaign period, and you can’t afford any downtime. You need additional compute resources to handle the additional load. What is the most cost-effective EC2 instance purchasing option for this job?",
+    "options": [
+      "A. Savings Plans.",
+      "B. Spot Instances.",
+      "C. Reserved Instances.",
+      "D. On-Demand Instances."
     ],
     "correctAnswer": "D"
   }

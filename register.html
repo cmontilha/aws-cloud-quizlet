@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | AWS Cloud Quizlet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { inter: ['Inter', 'sans-serif'] } } } }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-inter bg-gray-50 text-gray-800" data-page="register" data-auth="guest-only">
+  <header class="sticky top-0 z-30 bg-white/80 backdrop-blur border-b border-indigo-100">
+    <div class="max-w-6xl mx-auto flex items-center justify-between p-4 gap-4">
+      <div class="flex items-center gap-3">
+        <a href="index.html">
+          <img src="images/aws-logo.png" alt="AWS Logo" class="h-12 w-12 object-contain">
+        </a>
+        <h1 class="text-xl md:text-2xl font-bold"><a href="index.html">AWS Cloud Quizlet</a></h1>
+      </div>
+      <div class="flex items-center gap-2">
+        <a href="login.html" class="btn-link btn-link-secondary">Login</a>
+        <a href="register.html" class="btn-link btn-link-primary">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-main">
+    <div class="auth-background"></div>
+    <section class="auth-panel card static-card">
+      <p class="auth-kicker">CREATE ACCOUNT</p>
+      <h2 class="text-3xl font-bold mb-2">Register</h2>
+      <p class="text-gray-600 mb-6">Create your account and unlock the full study dashboard.</p>
+
+      <form id="register-form" class="auth-form-stack">
+        <label for="register-name">Name</label>
+        <input id="register-name" name="name" type="text" required minlength="2" autocomplete="name" class="auth-input" />
+
+        <label for="register-email">Email</label>
+        <input id="register-email" name="email" type="email" required autocomplete="email" class="auth-input" />
+
+        <label for="register-password">Password</label>
+        <input id="register-password" name="password" type="password" required minlength="8" autocomplete="new-password" class="auth-input" />
+
+        <label for="register-confirm-password">Confirm Password</label>
+        <input id="register-confirm-password" name="confirmPassword" type="password" required minlength="8" autocomplete="new-password" class="auth-input" />
+
+        <button type="submit" class="auth-submit-btn">Create Account</button>
+      </form>
+
+      <p id="auth-page-message" class="auth-page-message"></p>
+      <p class="text-sm mt-4">Already have an account? <a class="landing-inline-link" href="login.html">Login here</a>.</p>
+    </section>
+  </main>
+
+  <footer class="py-6 text-center bg-gray-100">
+    <a class="mx-2 hover:underline" href="https://github.com/cmontilha" aria-label="GitHub">GitHub</a>
+    |
+    <a class="mx-2 hover:underline" href="https://www.linkedin.com/in/caio-montilha/" aria-label="LinkedIn">LinkedIn</a>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

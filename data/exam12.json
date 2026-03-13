@@ -58,7 +58,10 @@
       "D. Amazon Redshift",
       "E. Amazon S3"
     ],
-    "correctAnswer": ["A", "B"]
+    "correctAnswer": [
+      "A",
+      "B"
+    ]
   },
   {
     "question": "Which of the following inspects AWS environments to find opportunities that can save money for users and also improve system performance?",
@@ -89,7 +92,10 @@
       "D. Pay-as-you-go pricing",
       "E. Reliability"
     ],
-    "correctAnswer": ["C", "D"]
+    "correctAnswer": [
+      "C",
+      "D"
+    ]
   },
   {
     "question": "Which service enables risk auditing by continuously monitoring and logging account activity, including user actions in the AWS Management Console and AWS SDKs?",
@@ -110,7 +116,10 @@
       "D. A network file system",
       "E. A durable storage system"
     ],
-    "correctAnswer": ["B", "E"]
+    "correctAnswer": [
+      "B",
+      "E"
+    ]
   },
   {
     "question": "Which services can be used across hybrid AWS Cloud architectures? (Select TWO.)",
@@ -121,7 +130,10 @@
       "D. Auto Scaling",
       "E. Amazon CloudWatch default metrics"
     ],
-    "correctAnswer": ["A", "B"]
+    "correctAnswer": [
+      "A",
+      "B"
+    ]
   },
   {
     "question": "What costs are included when comparing AWS Total Cost of Ownership (TCO) with on-premises TCO?",
@@ -162,7 +174,11 @@
       "D. AWS Total Cost of Ownership (TCO) Calculator",
       "E. Cost Eliminator"
     ],
-    "correctAnswer": ["B", "C", "D"]
+    "correctAnswer": [
+      "B",
+      "C",
+      "D"
+    ]
   },
   {
     "question": "Which of the following are advantages of AWS consolidated billing? (Select TWO.)",
@@ -173,7 +189,10 @@
       "D. Potential volume discounts, as usage in all accounts is combined",
       "E. The automatic extension of the master account’s AWS support plan to all accounts"
     ],
-    "correctAnswer": ["A", "D"]
+    "correctAnswer": [
+      "A",
+      "D"
+    ]
   },
   {
     "question": "Which of the following Reserved Instance (RI) pricing models provides the highest average savings compared to On-Demand pricing?",
@@ -274,7 +293,10 @@
       "D. Configuring Network Access Control Lists (ACL)",
       "E. Maintaining environmental controls within a data center"
     ],
-    "correctAnswer": ["B", "D"]
+    "correctAnswer": [
+      "B",
+      "D"
+    ]
   },
   {
     "question": "Which is a recommended pattern for designing a highly available architecture on AWS?",
@@ -305,7 +327,10 @@
       "D. Using Multi-Factor Authentication (MFA)",
       "E. Enforcing password strength and expiration"
     ],
-    "correctAnswer": ["D", "E"]
+    "correctAnswer": [
+      "D",
+      "E"
+    ]
   },
   {
     "question": "Which AWS services should be used for read/write of constantly changing data? (Select TWO.)",
@@ -316,7 +341,10 @@
       "D. Amazon Redshift",
       "E. Amazon EFS"
     ],
-    "correctAnswer": ["B", "E"]
+    "correctAnswer": [
+      "B",
+      "E"
+    ]
   },
   {
     "question": "What is one of the advantages of the Amazon Relational Database Service (Amazon RDS)?",
@@ -487,7 +515,10 @@
       "D. Real-time monitoring",
       "E. Adjustable retention"
     ],
-    "correctAnswer": ["D", "E"]
+    "correctAnswer": [
+      "D",
+      "E"
+    ]
   },
   {
     "question": "Which of the following is an AWS managed Domain Name System (DNS) web service?",
@@ -508,6 +539,183 @@
       "D. Cooling costs in hotter climates",
       "E. Proximity to the customer’s office for on-site visits"
     ],
-    "correctAnswer": ["A", "C"]
+    "correctAnswer": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "question": "What is the AWS IAM feature that provides an additional layer of security on top of user-name and password authentication?",
+    "options": [
+      "A. Key Pair.",
+      "B. Access Keys.",
+      "C. SDK.",
+      "D. MFA."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "Which of the following are factors in determining the appropriate database technology to use for a specific workload? (Choose TWO)",
+    "options": [
+      "A. Availability Zones.",
+      "B. Data sovereignty.",
+      "C. The number of reads and writes per second.",
+      "D. The nature of the queries.",
+      "E. Software bugs."
+    ],
+    "correctAnswer": [
+      "C",
+      "D"
+    ]
+  },
+  {
+    "question": "Which AWS feature allows a company to take advantage of usage tiers for services across multiple member accounts?",
+    "options": [
+      "A. Service control policies (SCPs).",
+      "B. Consolidated billing.",
+      "C. All Upfront Reserved Instances.",
+      "D. AWS Cost Explorer."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "You decide to buy a reserved instance for a term of one year. Which option provides the largest total discount?",
+    "options": [
+      "A. All up-front reservation.",
+      "B. All reserved instance payment options provide the same discount level.",
+      "C. Partial up-front reservation.",
+      "D. No up-front reservation."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "According to the AWS Acceptable Use Policy, which of the following statements is true regarding penetration testing of EC2 instances?",
+    "options": [
+      "A. Penetration testing is not allowed in AWS.",
+      "B. Penetration testing is performed automatically by AWS to determine vulnerabilities in your AWS infrastructure.",
+      "C. Penetration testing can be performed by the customer on their own instances without prior authorization from AWS.",
+      "D. The AWS customers are only allowed to perform penetration testing on services managed by AWS."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "What are some key benefits of using AWS CloudFormation? (Choose TWO)",
+    "options": [
+      "A. It helps AWS customers deploy their applications without worrying about the underlying infrastructure.",
+      "B. It applies advanced IAM security features automatically.",
+      "C. It automates the provisioning and updating of your infrastructure in a safe and controlled manner.",
+      "D. It allows you to model your entire infrastructure in just a text file.",
+      "E. It compiles and builds application code in a timely manner."
+    ],
+    "correctAnswer": [
+      "C",
+      "D"
+    ]
+  },
+  {
+    "question": "Which type of AWS storage is ephemeral and is deleted when an instance is stopped Of terminated?",
+    "options": [
+      "A. Amazon EBS.",
+      "B. Amazon EC2 instance store.",
+      "C. Amazon EFS.",
+      "D. Amazon S3."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "What should you do if you see resources, which you don’t remember creating, in the AWS Management Console? (Choose TWO)",
+    "options": [
+      "A. Stop all running services and open an investigation.",
+      "B. Give your root account password to AWS Support so that they can assist in troubleshooting and securing the account.",
+      "C. Check the AWS CloudTrail logs and delete all IAM users that have access to your resources.",
+      "D. Open an investigation and delete any potentially compromised IAM users.",
+      "E. Change your AWS root account password and the passwords of any IAM users."
+    ],
+    "correctAnswer": [
+      "D",
+      "E"
+    ]
+  },
+  {
+    "question": "Which of the following helps a customer view the Amazon EC2 billing activity for the past month?",
+    "options": [
+      "A. AWS Budgets.",
+      "B. AWS Pricing Calculator.",
+      "C. AWS Systems Manager.",
+      "D. AWS Cost & Usage Reports."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "Select the services that are server-based: (Choose TWO)",
+    "options": [
+      "A. Amazon RDS.",
+      "B. Amazon DynamoDB.",
+      "C. AWS Lambda.",
+      "D. AWS Fargate.",
+      "E. Amazon EMR."
+    ],
+    "correctAnswer": [
+      "A",
+      "E"
+    ]
+  },
+  {
+    "question": "Which AWS Service provides integration with Chef to automate the configuration of EC2 instances?",
+    "options": [
+      "A. AWS Config.",
+      "B. AWS OpsWorks.",
+      "C. AutoScaling.",
+      "D. AWS CloudFormation."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "What are the benefits of using an AWS-managed service? (Choose TWO)",
+    "options": [
+      "A. Provides complete control over the virtual infrastructure.",
+      "B. Allows customers to deliver new solutions faster.",
+      "C. Lowers operational complexity.",
+      "D. Eliminates the need to encrypt data.",
+      "E. Allows developers to control all patching related activities."
+    ],
+    "correctAnswer": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "question": "A company is migrating production workloads to AWS, and they are concerned about cost management across different departments. Which option should the company implement to categorize and track AWS spending?",
+    "options": [
+      "A. Use the AWS Pricing Calculator service to monitor the costs incurred by each department.",
+      "B. Use Amazon Aurora to forecast AWS spending based on usage.",
+      "C. Apply cost allocation tags to segment AWS costs by different e projects and departments.",
+      "D. Configure AWS Price List API to receive billing updates for each department automatically."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which AWS service helps developers compile and test their code?",
+    "options": [
+      "A. AWS CodeDeploy.",
+      "B. AWS CodeCommit.",
+      "C. CloudEndure.",
+      "D. AWS CodeBuild."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "As part of the AWS Migration Acceleration Program (MAP), what does AWS provide to accelerate Enterprise adoption of AWS? (Choose TWO)",
+    "options": [
+      "A. AWS Partners.",
+      "B. AWS Artifact.",
+      "C. AWS Professional Services.",
+      "D. Amazon Athena.",
+      "E. Amazon PinPoint."
+    ],
+    "correctAnswer": [
+      "A",
+      "C"
+    ]
   }
 ]

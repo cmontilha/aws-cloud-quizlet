@@ -154,11 +154,11 @@
   {
     "question": "Which of the following factors should be considered when determining the region in which AWS Resources will be deployed? (Choose TWO)",
     "options": [
-      "A. The AWS Region\u2019s security level.",
+      "A. The AWS Region’s security level.",
       "B. Data sovereignty.",
       "C. Cost.",
       "D. The planned number of VPCs.",
-      "E. Geographic proximity to the company\u2019s location."
+      "E. Geographic proximity to the company’s location."
     ],
     "correctAnswer": [
       "B",
@@ -196,7 +196,7 @@
     "correctAnswer": "C"
   },
   {
-    "question": "Which of the following are examples of the customer\u2019s responsibility to implement \u201csecurity IN the cloud\u201d? (Choose TWO)",
+    "question": "Which of the following are examples of the customer’s responsibility to implement “security IN the cloud”? (Choose TWO)",
     "options": [
       "A. Building a schema for an application.",
       "B. Replacing physical hardware.",
@@ -274,7 +274,7 @@
     "correctAnswer": "D"
   },
   {
-    "question": "An external auditor is requesting a log of all accesses to the AWS resources in the company\u2019s account. Which of the following services will provide the auditor with the requested information?",
+    "question": "An external auditor is requesting a log of all accesses to the AWS resources in the company’s account. Which of the following services will provide the auditor with the requested information?",
     "options": [
       "A. AWS CloudTrail.",
       "B. Amazon CloudFront.",
@@ -294,7 +294,7 @@
     "correctAnswer": "A"
   },
   {
-    "question": "A user has opened a \u201cProduction System Down\u201d support case to get help from AWS Support after a production system disruption. What is the expected response time for this type of support case?",
+    "question": "A user has opened a “Production System Down” support case to get help from AWS Support after a production system disruption. What is the expected response time for this type of support case?",
     "options": [
       "A. 12 hours.",
       "B. 15 minutes.",
@@ -392,7 +392,7 @@
     "correctAnswer": "B"
   },
   {
-    "question": "A company is migrating a web application to AWS. The application\u2019s compute capacity is continually utilized throughout the year. Which of the below options offers the company the most cost-effective solution?",
+    "question": "A company is migrating a web application to AWS. The application’s compute capacity is continually utilized throughout the year. Which of the below options offers the company the most cost-effective solution?",
     "options": [
       "A. On-demand Instances.",
       "B. Dedicated Hosts.",
@@ -476,7 +476,7 @@
     "correctAnswer": "B"
   },
   {
-    "question": "What should you do if you see resources, which you don\u2019t remember creating, in the AWS Management Console? (Choose TWO)",
+    "question": "What should you do if you see resources, which you don’t remember creating, in the AWS Management Console? (Choose TWO)",
     "options": [
       "A. Stop all running services and open an investigation.",
       "B. Give your root account password to AWS Support so that they can assist in troubleshooting and securing the account.",
@@ -524,8 +524,8 @@
     "options": [
       "A. Lambda only supports Python and Node.js, but third party plugins are available to convert code in other languages to these formats.",
       "B. Lambda natively supports a number of programming languages such as Node.js, Python, and Java.",
-      "C. Lambda is AWS\u2019 proprietary programming language for microservices.",
-      "D. Lambda doesn\u2019t support programming languages; it is a serverless compute service.",
+      "C. Lambda is AWS’ proprietary programming language for microservices.",
+      "D. Lambda doesn’t support programming languages; it is a serverless compute service.",
       "E. Lambda can support any programming language using an API."
     ],
     "correctAnswer": [
@@ -546,5 +546,163 @@
       "B",
       "C"
     ]
+  },
+  {
+    "question": "Which of the following will impact the price paid for an EC2 instance? (Choose TWO)",
+    "options": [
+      "A. Instance type.",
+      "B. The Availability Zone where the instance is provisioned.",
+      "C. Load balancing.",
+      "D. Number of buckets.",
+      "E. Number of private IPs."
+    ],
+    "correctAnswer": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "question": "Which of the following are valid Amazon EC2 Reserved Instance types? (Choose TWO)",
+    "options": [
+      "A. Convertible.",
+      "B. Expedited.",
+      "C. Bulk.",
+      "D. Spot.",
+      "E. Standard."
+    ],
+    "correctAnswer": [
+      "A",
+      "E"
+    ]
+  },
+  {
+    "question": "A company is developing a new application using a microservices framework. The new application is having performance and latency issues. Which AWS Service should be used to troubleshoot these issues?",
+    "options": [
+      "A. AWS CodePipeline.",
+      "B. AWS X-Ray.",
+      "C. Amazon Inspector.",
+      "D. AWS CloudTrail."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "Which of the following is a benefit of using the AWS Cloud?",
+    "options": [
+      "A. Permissive security removes the administrative burden.",
+      "B. Ability to focus on revenue-generating activities.",
+      "C. Control over cloud network hardware.",
+      "D. Choice of specific cloud hardware vendors."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "What is the main benefit of attaching security groups to an Amazon RDS instance?",
+    "options": [
+      "A. Manages user access and encryption keys.",
+      "B. Controls what IP address ranges can connect to your database instance.",
+      "C. Deploys SSL/TLS certificates for use with your database instance.",
+      "D. Distributes incoming traffic across multiple targets."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "A company has deployed several relational databases on Amazon EC2 instances. Every month the database software vendor releases new security patches that need to be applied to the databases. What is the MOST efficient way to apply the security patches?",
+    "options": [
+      "A. Connect to each database instance on a monthly basis and download and apply the necessary security patches from the vendor.",
+      "B. Enable automate patching for the instances using the Amazon RDS console.",
+      "C. In AWS Config, configure a rule for the instances and the required patch level.",
+      "D. Use AWS Systems Manager to automate database patching according to a schedule."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "Which of the following is a component of the shared responsibility model managed entirely by AWS?",
+    "options": [
+      "A. Patching operating system software",
+      "B. Encrypting data",
+      "C. Enforcing multi-factor authentication",
+      "D. Auditing physical data center assets"
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "A company has infrastructure hosted in an on-premises data center. They currently have an operations team that takes care of identity management. If they decide to migrate to the AWS cloud, which of the following services would help them perform the same role in AWS?",
+    "options": [
+      "A. AWS IAM.",
+      "B. AWS Outposts.",
+      "C. AWS Federation.",
+      "D. Amazon Redshift."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "What AWS service allows you to buy third-party software solutions and services that run on AWS resources?",
+    "options": [
+      "A. AWS Application Discovery service.",
+      "B. Amazon DevPay.",
+      "C. AWS Marketplace.",
+      "D. Resource Groups."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "What is the AWS service that provides you the highest level of control over the underlying virtual infrastructure?",
+    "options": [
+      "A. Amazon Redshift.",
+      "B. Amazon DynamoDB.",
+      "C. Amazon EC2.",
+      "D. Amazon RDS."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "A company is deploying a new two-tier web application in AWS. Where should the most frequently accessed data be stored so that the application’s response time is optimal?",
+    "options": [
+      "A. AWS OpsWorks.",
+      "B. AWS Storage Gateway.",
+      "C. Amazon EBS volume.",
+      "D. Amazon ElastiCache."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "You have been tasked with auditing the security of your VPC. As part of this process, you need to start by analyzing what inbound and outbound traffic is allowed on your EC2 instances. What two parts of the VPC do you need to check to accomplish this task?",
+    "options": [
+      "A. Network ACLs and Traffic Manager.",
+      "B. Network ACLs and Subnets.",
+      "C. Security Groups and Internet Gateways.",
+      "D. Security Groups and Network ACLs."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "Which of the following services gives you access to all AWS auditor-issued reports and certifications?",
+    "options": [
+      "A. AWS Artifact.",
+      "B. AWS Config.",
+      "C. Amazon CloudWatch.",
+      "D. AWS CloudTrail."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "Which is a recommended pattern for designing a highly available architecture on AWS?",
+    "options": [
+      "A. Ensure that components have low-latency network connectivity.",
+      "B. Run enough Amazon EC2 instances to operate at peak load.",
+      "C. Ensure that the application is designed to accommodate failure of any single component.",
+      "D. Use a monolithic application that handles all operations."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "If each department within a company has its own AWS account, what is one way to enable consolidated billing?",
+    "options": [
+      "A. Use AWS Budgets on each account to pay only to budget.",
+      "B. Contact AWS Support for a monthly bill.",
+      "C. Create an AWS Organization from the payer account and invite the other accounts to join.",
+      "D. Put all invoices into one Amazon Simple Storage Service (Amazon S3) bucket, load data into Amazon Redshift, and then run a billing report."
+    ],
+    "correctAnswer": "C"
   }
 ]

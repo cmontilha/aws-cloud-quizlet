@@ -40,7 +40,7 @@
     "correctAnswer": "D"
   },
   {
-    "question": "What does the AWS \u201cBusiness\u201d support plan provide? (Choose TWO)",
+    "question": "What does the AWS “Business” support plan provide? (Choose TWO)",
     "options": [
       "A. Access to the full set of Trusted Advisor checks.",
       "B. Support Concierge Service.",
@@ -90,7 +90,7 @@
   {
     "question": "Which statement is true regarding AWS pricing? (Choose TWO)",
     "options": [
-      "A. With the AWS pay-as-you-go pricing model, you don\u2019t have to pay any upfront fee.",
+      "A. With the AWS pay-as-you-go pricing model, you don’t have to pay any upfront fee.",
       "B. You have no responsibility for third-party software license costs.",
       "C. You only pay for the individual services that you need with no long-term contracts.",
       "D. For some services, you have to pay a startup fee in order to get the service running.",
@@ -126,7 +126,7 @@
     "options": [
       "A. Amazon EBS.",
       "B. Amazon RDS.",
-      "C. You can\u2019t run a database inside an Amazon EC2 instance.",
+      "C. You can’t run a database inside an Amazon EC2 instance.",
       "D. Amazon DynamoDB."
     ],
     "correctAnswer": "A"
@@ -194,7 +194,7 @@
     "correctAnswer": "B"
   },
   {
-    "question": "Which database service should you use if your application and data schema require \u201cjoins\u201d or complex transactions?",
+    "question": "Which database service should you use if your application and data schema require “joins” or complex transactions?",
     "options": [
       "A. Amazon RDS.",
       "B. AWS Outposts.",
@@ -234,7 +234,7 @@
     "correctAnswer": "B"
   },
   {
-    "question": "How can you increase your application\u2019s fault-tolerance while it is being hosted in AWS?",
+    "question": "How can you increase your application’s fault-tolerance while it is being hosted in AWS?",
     "options": [
       "A. Deploy your application across multiple EC2 instances.",
       "B. Deploy your application across multiple Availability Zones.",
@@ -272,7 +272,7 @@
     ]
   },
   {
-    "question": "Which of the following is a benefit of the \u201cLoose Coupling\u201d architecture principle?",
+    "question": "Which of the following is a benefit of the “Loose Coupling” architecture principle?",
     "options": [
       "A. It eliminates the need for change management.",
       "B. It allows for Cross-Region Replication.",
@@ -326,7 +326,7 @@
     "correctAnswer": "B"
   },
   {
-    "question": "You are planning to launch an advertising campaign over the coming weekend to promote a new digital product. It is expected that there will be heavy spikes in load during the campaign period, and you can\u2019t afford any downtime. You need additional compute resources to handle the additional load. What is the most cost-effective EC2 instance purchasing option for this job?",
+    "question": "You are planning to launch an advertising campaign over the coming weekend to promote a new digital product. It is expected that there will be heavy spikes in load during the campaign period, and you can’t afford any downtime. You need additional compute resources to handle the additional load. What is the most cost-effective EC2 instance purchasing option for this job?",
     "options": [
       "A. Savings Plans.",
       "B. Spot Instances.",
@@ -402,7 +402,7 @@
     "options": [
       "A. They provide free capacity when testing your new applications.",
       "B. They are cheaper than all other EC2 options.",
-      "C. They remove the need to buy \u201csafety net\u201d capacity to handle periodic traffic spikes.",
+      "C. They remove the need to buy “safety net” capacity to handle periodic traffic spikes.",
       "D. They only require 1-2 days for setup and configuration.",
       "E. You can increase or decrease your compute capacity depending on the demands of your application."
     ],
@@ -422,7 +422,7 @@
     "correctAnswer": "D"
   },
   {
-    "question": "AWS provides disaster recovery capability by allowing customers to deploy infrastructure into multiple [\u2026].",
+    "question": "AWS provides disaster recovery capability by allowing customers to deploy infrastructure into multiple […].",
     "options": [
       "A. Regions.",
       "B. Transportation devices.",
@@ -432,7 +432,7 @@
     "correctAnswer": "A"
   },
   {
-    "question": "A financial services company decides to migrate one of its applications to AWS. The application deals with sensitive data, such as credit card information, and must run on a PCI-compliant environment. Which of the following is the company\u2019s responsibility when building a PCI-compliant environment in AWS? (Choose TWO)",
+    "question": "A financial services company decides to migrate one of its applications to AWS. The application deals with sensitive data, such as credit card information, and must run on a PCI-compliant environment. Which of the following is the company’s responsibility when building a PCI-compliant environment in AWS? (Choose TWO)",
     "options": [
       "A. Start the migration process immediately as all AWS services are PCI compliant.",
       "B. Ensure that AWS services are configured properly to meet all PCI DSS standards.",
@@ -479,7 +479,7 @@
     "question": "Which of the following steps should be taken by a customer when conducting penetration testing on AWS?",
     "options": [
       "A. Conduct penetration testing using Amazon Inspector, and then notify AWS support.",
-      "B. Request and wait for approval from the customer\u2019s internal security team, and then conduct testing.",
+      "B. Request and wait for approval from the customer’s internal security team, and then conduct testing.",
       "C. Notify AWS support, and then conduct testing immediately.",
       "D. Request and wait for approval from AWS support, and then conduct testing."
     ],
@@ -516,7 +516,7 @@
     "correctAnswer": "B"
   },
   {
-    "question": "The AWS Cloud\u2019s multiple Regions are an example of:",
+    "question": "The AWS Cloud’s multiple Regions are an example of:",
     "options": [
       "A. Agility.",
       "B. Global infrastructure.",
@@ -558,5 +558,167 @@
       "C",
       "D"
     ]
+  },
+  {
+    "question": "You have just set up your AWS environment and have created six IAM user accounts for the DevOps team. What is the AWS recommendation when granting permissions to these IAM accounts?",
+    "options": [
+      "A. Attach a separate IAM policy for each individual account.",
+      "B. Apply the Principle of Least Privilege.",
+      "C. For security purposes, you should not grant any permission to the DevOps team.",
+      "D. Create six different IAM passwords."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "A customer is using multiple AWS accounts with separate billing. How can the customer take advantage of volume discounts with minimal impact to the AWS resources?",
+    "options": [
+      "A. Create one global AWS account and move all AWS resources to that account.",
+      "B. Sign up for three years of Reserved Instance pricing up front.",
+      "C. Use the consolidated billing feature from AWS Organizations.",
+      "D. Sign up for the AWS Enterprise support plan to get volume discounts."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which of the following is true regarding the AWS availability zones and edge locations?",
+    "options": [
+      "A. Edge locations are located in separate Availability Zones worldwide to serve global customers.",
+      "B. An availability zone exists within an edge location to distribute content globally with low latency.",
+      "C. An Availability Zone is a geographic location where AWS provides multiple, physically separated and isolated edge locations.",
+      "D. An AWS Availability Zone is an isolated location within an AWS Region, however edge locations are located in multiple cities worldwide."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "You want to create a backup of your data in another geographical location. Where should you create this backup?",
+    "options": [
+      "A. In another Edge location.",
+      "B. In another Region.",
+      "C. In another VPC.",
+      "D. In another Availability Zone."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "Which options does AWS make available for customers who want to learn about security in the cloud in an instructor-led setting? (Select TWO.)",
+    "options": [
+      "A. AWS Trusted Advisor",
+      "B. AWS Online Tech Talks",
+      "C. AWS Blog",
+      "D. AWS Forums",
+      "E. AWS Classroom Training"
+    ],
+    "correctAnswer": [
+      "B",
+      "E"
+    ]
+  },
+  {
+    "question": "According to the AWS shared responsibility model what is the sole responsibility of AWS?",
+    "options": [
+      "A. Application security.",
+      "B. Edge location management.",
+      "C. Patch management.",
+      "D. Client-side data."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "A company is hosting business critical workloads in an AWS Region. To protect against data loss and ensure business continuity, a mirror image of the current AWS environment should be created in another AWS Region. Company policy requires that the standby environment must be available in minutes in case of an outage in the primary AWS Region. Which AWS service can be used to meet these requirements?",
+    "options": [
+      "A. CloudEndure Disaster Recovery.",
+      "B. CloudEndure Migration.",
+      "C. AWS Backup.",
+      "D. AWS Glue."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "An organization needs to build a financial application that requires support for ACID transactions. Which AWS database service is most appropriate in this case?",
+    "options": [
+      "A. RedShift.",
+      "B. RDS.",
+      "C. CloudHSM.",
+      "D. DMS."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "You manage a blog on AWS that has different environments: development, testing, and production. What can you use to create a custom console for each environment to view and manage your resources easily?",
+    "options": [
+      "A. AWS Resource Groups.",
+      "B. AWS Placement Groups.",
+      "C. AWS Management Console.",
+      "D. AWS Tag Editor."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "How does AWS Trusted Advisor provide guidance to users of the AWS Cloud? (Select TWO)",
+    "options": [
+      "A. It identifies software vulnerabilities in applications running on AWS.",
+      "B. It provides a list of cost optimization recommendations based on current AWS usage.",
+      "C. It detects potential security vulnerabilities caused by permissions settings on account resources.",
+      "D. It automatically corrects potential security issues caused by permissions settings on account resources.",
+      "E. It provides proactive alerting whenever an Amazon EC2 instance has been compromised."
+    ],
+    "correctAnswer": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "question": "Under the shared responsibility model, which of the following is a shared control between a customer and AWS?",
+    "options": [
+      "A. Physical controls.",
+      "B. Patch management.",
+      "C. Zone security.",
+      "D. Data center auditing."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "Which service enables risk auditing by continuously monitoring and logging account activity, including user actions in the AWS Management Console and AWS SDKs?",
+    "options": [
+      "A. Amazon CloudWatch.",
+      "B. AWS CloudTrail.",
+      "C. AWS Config.",
+      "D. AWS Health."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "What can you access by visiting the URL: http://status.aws.amazon.com?",
+    "options": [
+      "A. AWS Billing Dashboard.",
+      "B. AWS Cost Dashboard.",
+      "C. AWS Service Health Dashboard.",
+      "D. AWS Security Dashboard."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "A startup company is operating on limited funds and is extremely concerned about cost overruns. Which of the below options can be used to notify the company when their monthly AWS bill exceeds $2000? (Choose TWO)",
+    "options": [
+      "A. Setup a CloudWatch billing alarm that triggers an SNS notification when the threshold is exceeded.",
+      "B. Configure the Amazon Simple Email Service to send billing alerts to their email address on a daily basis.",
+      "C. Configure the AWS Budgets Service to alert the company when the threshold is exceeded.",
+      "D. Configure AWS CloudTrail to automatically delete all AWS resources when the threshold is exceeded.",
+      "E. Configure the Amazon Connect Service to alert the company when the threshold is exceeded."
+    ],
+    "correctAnswer": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "question": "You have a real-time IoT application that requires sub-millisecond latency. Which of the following services should you use?",
+    "options": [
+      "A. Amazon Redshift.",
+      "B. Amazon Athena.",
+      "C. AWS Cloud9.",
+      "D. Amazon ElastiCache for Redis."
+    ],
+    "correctAnswer": "D"
   }
 ]

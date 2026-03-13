@@ -69,7 +69,7 @@
       "A. Deploy the application across multiple Availability Zones and Edge locations.",
       "B. Deploy the application across multiple Availability Zones and subnets.",
       "C. Deploy the application across multiple Regions and Availability Zones.",
-      "D. Deploy the application across multiple VPC\u2019s and subnets."
+      "D. Deploy the application across multiple VPC’s and subnets."
     ],
     "correctAnswer": "C"
   },
@@ -152,7 +152,7 @@
     ]
   },
   {
-    "question": "What is the advantage of the AWS-recommended practice of \u201cdecoupling\u201d applications?",
+    "question": "What is the advantage of the AWS-recommended practice of “decoupling” applications?",
     "options": [
       "A. Allows treating an application as a single, cohesive unit.",
       "B. Reduces inter-dependencies so that failures do not impact other components of the application.",
@@ -174,7 +174,7 @@
   {
     "question": "What do you gain from setting up consolidated billing for five different AWS accounts under another master account?",
     "options": [
-      "A. AWS services\u2019 costs will be reduced to half the original price.",
+      "A. AWS services’ costs will be reduced to half the original price.",
       "B. The consolidated billing feature is just for organizational purpose.",
       "C. Each AWS account gets volume discounts.",
       "D. Each AWS account gets five times the free-tier services capacity."
@@ -196,7 +196,7 @@
     ]
   },
   {
-    "question": "One of the most important AWS best-practices to follow is the cloud architecture principle of elasticity. How does this principle improve your architecture\u2019s design?",
+    "question": "One of the most important AWS best-practices to follow is the cloud architecture principle of elasticity. How does this principle improve your architecture’s design?",
     "options": [
       "A. By automatically scaling your on-premises resources based on changes in demand.",
       "B. By automatically scaling your AWS resources using an Elastic Load Balancer.",
@@ -230,7 +230,7 @@
     "correctAnswer": "C"
   },
   {
-    "question": "What does the \u201cPrinciple of Least Privilege\u201d refer to?",
+    "question": "What does the “Principle of Least Privilege” refer to?",
     "options": [
       "A. You should grant your users only the permissions they need when they need them and nothing more.",
       "B. All IAM users should have at least the necessary permissions to access the core AWS services.",
@@ -284,7 +284,7 @@
     ]
   },
   {
-    "question": "A company is deploying a new two-tier web application in AWS. Where should the most frequently accessed data be stored so that the application\u2019s response time is optimal?",
+    "question": "A company is deploying a new two-tier web application in AWS. Where should the most frequently accessed data be stored so that the application’s response time is optimal?",
     "options": [
       "A. AWS OpsWorks.",
       "B. AWS Storage Gateway.",
@@ -412,7 +412,7 @@
     ]
   },
   {
-    "question": "In order to implement best practices when dealing with a \u201cSingle Point of Failure,\u201d you should attempt to build as much automation as possible in both detecting and reacting to failure. Which of the following AWS services would help? (Choose TWO)",
+    "question": "In order to implement best practices when dealing with a “Single Point of Failure,” you should attempt to build as much automation as possible in both detecting and reacting to failure. Which of the following AWS services would help? (Choose TWO)",
     "options": [
       "A. ELB.",
       "B. Auto Scaling.",
@@ -480,7 +480,7 @@
     ]
   },
   {
-    "question": "You have deployed your application on multiple Amazon EC2 instances. Your customers complain that sometimes they can\u2019t reach your application. Which AWS service allows you to monitor the performance of your EC2 instances to assist in troubleshooting these issues?",
+    "question": "You have deployed your application on multiple Amazon EC2 instances. Your customers complain that sometimes they can’t reach your application. Which AWS service allows you to monitor the performance of your EC2 instances to assist in troubleshooting these issues?",
     "options": [
       "A. AWS Lambda.",
       "B. AWS Config.",
@@ -506,7 +506,7 @@
       "B. Amazon S3 can run any type of application or backend system.",
       "C. Amazon S3 stores any number of objects, but with object size limits.",
       "D. Amazon S3 can be scaled manually to store and retrieve any amount of data from anywhere.",
-      "E. Amazon S3 provides 99.999999999% (11 9\u2019s) of data durability."
+      "E. Amazon S3 provides 99.999999999% (11 9’s) of data durability."
     ],
     "correctAnswer": [
       "B",
@@ -546,5 +546,171 @@
       "D. Convertible RI."
     ],
     "correctAnswer": "D"
+  },
+  {
+    "question": "In your on-premises environment, you can create as many virtual servers as you need from a single template. What can you use to perform the same in AWS?",
+    "options": [
+      "A. IAM.",
+      "B. An internet gateway.",
+      "C. EBS Snapshot.",
+      "D. AMI."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "A company’s web application currently has light dependencies on underlying components so when one component fails the entire web application fails. Applying which AWS Cloud design principle will address the current design issue?",
+    "options": [
+      "A. Implementing elasticity enabling the application to scale up or scale down as demand changes.",
+      "B. Enabling several EC2 instances to run in parallel to achieve better performance.",
+      "C. Focusing on decoupling components by isolating them and ensuring individual components can function when other components.",
+      "D. Doubling EC2 computing resources to increase system fault tolerance."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which of the following services is an AWS repository management system that allows for storing, versioning, and managing your application code?",
+    "options": [
+      "A. AWS CodePipeline.",
+      "B. AWS CodeCommit.",
+      "C. AWS X-Ray.",
+      "D. Amazon Inspector."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "Who is responsible for scaling a DynamoDB database in the AWS Shared Responsibility Model?",
+    "options": [
+      "A. Your security team.",
+      "B. Your development team.",
+      "C. AWS.",
+      "D. Your internal DevOps team."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which of the following services provide real-time auditing for compliance and vulnerabilities? (Choose TWO)",
+    "options": [
+      "A. AWS Config.",
+      "B. Amazon Redshift.",
+      "C. Amazon MQ.",
+      "D. AWS Trusted Advisor.",
+      "E. Amazon Cognito."
+    ],
+    "correctAnswer": [
+      "A",
+      "D"
+    ]
+  },
+  {
+    "question": "Your web application currently faces performance issues and suffers from long load times. Which of the following AWS services could help fix these issues and improve performance?",
+    "options": [
+      "A. Amazon Detective.",
+      "B. AWS X-Ray.",
+      "C. AWS Security Hub.",
+      "D. AWS Shield."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "What is the AWS database service that allows you to upload data structured in key-value format?",
+    "options": [
+      "A. Amazon DynamoDB.",
+      "B. Amazon Aurora.",
+      "C. Amazon Redshift.",
+      "D. Amazon RDS."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "Which of the following AWS services can be used to serve large amounts of online video content with the lowest possible latency? (Select TWO)",
+    "options": [
+      "A. appGateway.",
+      "B. Amazon S3.",
+      "C. Amazon Elastic File System (EFS).",
+      "D. Amazon Glacier.",
+      "E. Amazon CloudFront."
+    ],
+    "correctAnswer": [
+      "B",
+      "E"
+    ]
+  },
+  {
+    "question": "Which of the following strategies help analyze costs in AWS?",
+    "options": [
+      "A. Using tags to group resources.",
+      "B. Using AWS CloudFormation to automate the deployment of resources.",
+      "C. Deploying resources of the same type in different regions.",
+      "D. Configuring Amazon Inspector to automatically analyze costs and email reports."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "Which is the MINIMUM AWS Support plan that provides technical support through phone calls?",
+    "options": [
+      "A. Enterprise.",
+      "B. Business.",
+      "C. Developer.",
+      "D. Basic."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "When running a workload in AWS, the customer is NOT responsible for: (Select TWO)",
+    "options": [
+      "A. Running penetration tests.",
+      "B. Reserving capacity.",
+      "C. Data center operations.",
+      "D. Auditing and regulatory compliance.",
+      "E. Infrastructure security."
+    ],
+    "correctAnswer": [
+      "C",
+      "E"
+    ]
+  },
+  {
+    "question": "Which of the following is an important architectural design principle when designing cloud applications?",
+    "options": [
+      "A. Use multiple Availability Zones.",
+      "B. Use tightly coupled components.",
+      "C. Use open source software.",
+      "D. Provision extra capacity."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "What credential components are required to gain programmatic access to an AWS account? (Select TWO)",
+    "options": [
+      "A. An access key ID.",
+      "B. A primary key.",
+      "C. A secret access key.",
+      "D. A user ID.",
+      "E. A secondary key."
+    ],
+    "correctAnswer": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "question": "Which service provides object-level storage in AWS?",
+    "options": [
+      "A. Amazon EBS.",
+      "B. Amazon Instance Store.",
+      "C. Amazon EFS.",
+      "D. Amazon S3."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "According to the AWS shared responsibility model who is responsible for configuration management?",
+    "options": [
+      "A. It is solely the responsibility of the customer.",
+      "B. It is solely the responsibility of AWS.",
+      "C. It is shared between AWS and the customer.",
+      "D. It is not part of the AWS shared responsibility model."
+    ],
+    "correctAnswer": "C"
   }
 ]

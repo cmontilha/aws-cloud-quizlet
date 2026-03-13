@@ -68,7 +68,10 @@
       "D. Amazon CloudWatch.",
       "E. Concierge Support Team."
     ],
-    "correctAnswer": ["A", "B"]
+    "correctAnswer": [
+      "A",
+      "B"
+    ]
   },
   {
     "question": "What is the AWS feature that provides an additional level of security above the default authentication mechanism of usernames and passwords?",
@@ -131,7 +134,7 @@
     "correctAnswer": "A"
   },
   {
-    "question": "The principle \u201cdesign for failure and nothing will fail\u201d is very important when designing your AWS Cloud architecture. Which of the following would help adhere to this principle? (Choose TWO)",
+    "question": "The principle “design for failure and nothing will fail” is very important when designing your AWS Cloud architecture. Which of the following would help adhere to this principle? (Choose TWO)",
     "options": [
       "A. Multi-factor authentication.",
       "B. Availability Zones.",
@@ -139,7 +142,10 @@
       "D. Penetration testing.",
       "E. Vertical Scaling."
     ],
-    "correctAnswer": ["B", "C"]
+    "correctAnswer": [
+      "B",
+      "C"
+    ]
   },
   {
     "question": "What is the AWS service that provides a virtual network dedicated to your AWS account?",
@@ -160,7 +166,10 @@
       "D. Ensuring that the underlying EC2 host is configured properly.",
       "E. Patching applications installed on Amazon EC2."
     ],
-    "correctAnswer": ["B", "E"]
+    "correctAnswer": [
+      "B",
+      "E"
+    ]
   },
   {
     "question": "Which of the following AWS services can be used as a compute resource? (Choose TWO)",
@@ -171,7 +180,10 @@
       "D. Amazon EC2.",
       "E. AWS Lambda."
     ],
-    "correctAnswer": ["D", "E"]
+    "correctAnswer": [
+      "D",
+      "E"
+    ]
   },
   {
     "question": "Your company is designing a new application that will store and retrieve photos and videos. Which of the following services should you recommend as the underlying storage mechanism?",
@@ -242,7 +254,10 @@
       "D. Automate wherever possible.",
       "E. Remove single points of failure."
     ],
-    "correctAnswer": ["D", "E"]
+    "correctAnswer": [
+      "D",
+      "E"
+    ]
   },
   {
     "question": "Which AWS Service can be used to establish a dedicated, private network connection between AWS and your datacenter?",
@@ -293,7 +308,10 @@
       "D. Configuring Access Control Lists (ACLs).",
       "E. Hardware maintenance."
     ],
-    "correctAnswer": ["C", "E"]
+    "correctAnswer": [
+      "C",
+      "E"
+    ]
   },
   {
     "question": "What is the AWS service that provides you the highest level of control over the underlying virtual infrastructure?",
@@ -334,7 +352,10 @@
       "D. Virtualized compute resources.",
       "E. Dedicated hosting."
     ],
-    "correctAnswer": ["B", "C"]
+    "correctAnswer": [
+      "B",
+      "C"
+    ]
   },
   {
     "question": "Which of the following aspects of security are managed by AWS? (Choose TWO)",
@@ -345,7 +366,10 @@
       "D. Hardware patching.",
       "E. Securing global physical infrastructure."
     ],
-    "correctAnswer": ["D", "E"]
+    "correctAnswer": [
+      "D",
+      "E"
+    ]
   },
   {
     "question": "Which statement best describes the operational excellence pillar of the AWS Well-Architected Framework?",
@@ -361,7 +385,7 @@
     "question": "AWS has created a large number of Edge Locations as part of its Global Infrastructure. Which of the following is NOT a benefit of using Edge Locations?",
     "options": [
       "A. Edge locations are used by CloudFront to cache the most recent responses.",
-      "B. Edge locations are used by CloudFront to improve your end users\u2019 experience when uploading files.",
+      "B. Edge locations are used by CloudFront to improve your end users’ experience when uploading files.",
       "C. Edge locations are used by CloudFront to distribute traffic across multiple instances to reduce latency.",
       "D. Edge locations are used by CloudFront to distribute content to global users with low latency."
     ],
@@ -376,7 +400,10 @@
       "D. AWS X-Ray.",
       "E. AWS Config."
     ],
-    "correctAnswer": ["A", "E"]
+    "correctAnswer": [
+      "A",
+      "E"
+    ]
   },
   {
     "question": "Which of the following services allows you to run containerized applications on a cluster of EC2 instances?",
@@ -417,7 +444,10 @@
       "D. CloudFormation.",
       "E. Network ACLs."
     ],
-    "correctAnswer": ["B", "C"]
+    "correctAnswer": [
+      "B",
+      "C"
+    ]
   },
   {
     "question": "Which of the following activities may help reduce your AWS monthly costs?",
@@ -430,7 +460,7 @@
     "correctAnswer": "A"
   },
   {
-    "question": "What is the AWS service/feature that takes advantage of Amazon CloudFront\u2019s globally distributed edge locations to transfer files to S3 with higher upload speeds?",
+    "question": "What is the AWS service/feature that takes advantage of Amazon CloudFront’s globally distributed edge locations to transfer files to S3 with higher upload speeds?",
     "options": [
       "A. S3 Transfer Acceleration.",
       "B. AWS WAF.",
@@ -458,7 +488,10 @@
       "D. AWS Glue.",
       "E. Amazon CloudFront."
     ],
-    "correctAnswer": ["B", "E"]
+    "correctAnswer": [
+      "B",
+      "E"
+    ]
   },
   {
     "question": "Using Amazon RDS falls under the shared responsibility model. Which of the following are customer responsibilities? (Choose TWO)",
@@ -469,7 +502,10 @@
       "D. Patching the database software.",
       "E. Installing the database software."
     ],
-    "correctAnswer": ["A", "C"]
+    "correctAnswer": [
+      "A",
+      "C"
+    ]
   },
   {
     "question": "A company has a large amount of structured data stored in their on-premises data center. They are planning to migrate all the data to AWS, what is the most appropriate AWS database option?",
@@ -510,5 +546,171 @@
       "D. She has properly built a scalable system."
     ],
     "correctAnswer": "B"
+  },
+  {
+    "question": "Which AWS Service can be used to register a new domain name?",
+    "options": [
+      "A. Amazon Personalize.",
+      "B. Amazon Route 53.",
+      "C. AWS KMS.",
+      "D. AWS Config."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "For Amazon RDS databases, what does AWS perform on your behalf? (Choose TWO)",
+    "options": [
+      "A. Database setup.",
+      "B. Network traffic protection.",
+      "C. Management of the operating system.",
+      "D. Access management.",
+      "E. Management of firewall rules."
+    ],
+    "correctAnswer": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "question": "Which of the below options are related to the reliability of AWS? (Choose TWO)",
+    "options": [
+      "A. Applying the principle of least privilege to all AWS resources.",
+      "B. Automatically provisioning new resources to meet demand.",
+      "C. All AWS services are considered Global Services, and this design helps customers serve their international users.",
+      "D. Providing compensation to customers if issues occur.",
+      "E. Ability to recover quickly from failures."
+    ],
+    "correctAnswer": [
+      "B",
+      "E"
+    ]
+  },
+  {
+    "question": "A company is running a large web application that needs to always be available. The application tends to slow down when CPU usage is greater than 60%. How can they track when CPU usage goes above 60% for any of the EC2 Instances in their account?",
+    "options": [
+      "A. Use CloudFront to monitor the CPU usage.",
+      "B. Set the AWS Config CPU threshold to 60% to receive a notification when EC2 usage exceeds that value.",
+      "C. Use CloudWatch Alarms to monitor the CPU and alert when the CPU usage is >= 60%.",
+      "D. Use SNS to monitor the utilization of the server."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which of the following is a type of MFA device that customers can use to protect their AWS resources?",
+    "options": [
+      "A. AWS CloudHSM.",
+      "B. U2F Security Key.",
+      "C. AWS Access Keys.",
+      "D. AWS Key Pair."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "You are using several on-demand EC2 Instances to run your development environment. What is the best way to reduce your charges when these instances are not in use?",
+    "options": [
+      "A. Deleting all EBS volumes attached to the instances.",
+      "B. You cannot minimize charges for on-demand instances.",
+      "C. Terminating the instances.",
+      "D. Stopping the instances."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "Why does every AWS Region contain multiple Availability Zones?",
+    "options": [
+      "A. Multiple Availability Zones allows you to build resilient and highly available architectures.",
+      "B. Multiple Availability Zones results in lower total cost compared to deploying in a single Availability Zone.",
+      "C. Multiple Availability Zones allows for data replication and global reach.",
+      "D. Multiple Availability Zones within a region increases the storage capacity available in that region."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "Which of the following are use cases for Amazon EMR? (Choose TWO)",
+    "options": [
+      "A. Enables you to backup extremely large amounts of data at very low costs.",
+      "B. Enables you to move Exabyte-scale data from on-premises datacenters into AWS.",
+      "C. Enables you to analyze and process extremely large amounts of data in a timely manner.",
+      "D. Enables you to easily run and scale Apache Spark, Hadoop,and other Big Data frameworks.",
+      "E. Enables you to easily run and manage Docker containers."
+    ],
+    "correctAnswer": [
+      "C",
+      "D"
+    ]
+  },
+  {
+    "question": "How are AWS customers billed for Linux-based Amazon EC2 usage?",
+    "options": [
+      "A. EC2 instances will be billed on one second increments, with a minimum of one minute.",
+      "B. EC2 instances will be billed on one hour increments, with a minimum of one day.",
+      "C. EC2 instances will be billed on one minute increments, with a minimum of one hour.",
+      "D. EC2 instances will be billed on one day increments, with a minimum of one month."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "Which type of AWS storage is ephemeral and is deleted when an instance is stopped Of terminated?",
+    "options": [
+      "A. Amazon EBS.",
+      "B. Amazon EC2 instance store.",
+      "C. Amazon EFS.",
+      "D. Amazon S3."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "A company is planning to use Amazon S3 and Amazon CloudFront to distribute its video courses globally. What tool can the company use to estimate the costs of these services?",
+    "options": [
+      "A. AWS Cost Explorer.",
+      "B. AWS Pricing Calculator.",
+      "C. AWS Budgets.",
+      "D. AWS Cost & Usage Report."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "You need to migrate a large number of on-premises workloads to AWS. Which AWS service is the most appropriate?",
+    "options": [
+      "A. AWS File Transfer Acceleration.",
+      "B. AWS Server Migration Service.",
+      "C. AWS Database Migration Service.",
+      "D. AWS Application Discovery Service."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "Which AWS service provides the ability to manage infrastructure as code?",
+    "options": [
+      "A. AWS CodePipeline.",
+      "B. AWS CodeDeploy.",
+      "C. AWS Direct Connect.",
+      "D. AWS CloudFormation."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "The user is fully responsible for which action when running workloads on AWS?",
+    "options": [
+      "A. Patching the infrastructure components.",
+      "B. Maintaining the underlying infrastructure components.",
+      "C. Maintaining physical and environmental controls.",
+      "D. Implementing controls to route application traffic."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "What is one benefit and one drawback of buying a reserved EC2 instance? (Select TWO)",
+    "options": [
+      "A. Instances can be shut down by AWS at any time with no notification.",
+      "B. Reserved instances require at least a one-year pricing commitment.",
+      "C. There is no additional charge for using dedicated instances.",
+      "D. Reserved instances provide a significant discount compared to on-demand instances.",
+      "E. Reserved instances are best suited for periodic workloads."
+    ],
+    "correctAnswer": [
+      "B",
+      "D"
+    ]
   }
 ]

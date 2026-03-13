@@ -127,7 +127,7 @@
     ]
   },
   {
-    "question": "Which AWS service identifies security groups that allow unrestricted access to a user\u2019s AWS resources?",
+    "question": "Which AWS service identifies security groups that allow unrestricted access to a user’s AWS resources?",
     "options": [
       "A. AWS Trusted Advisor.",
       "B. Amazon Inspector.",
@@ -181,7 +181,7 @@
     "correctAnswer": "A"
   },
   {
-    "question": "Which AWS feature will reduce the customer\u2019s total cost of ownership (TCO)?",
+    "question": "Which AWS feature will reduce the customer’s total cost of ownership (TCO)?",
     "options": [
       "A. Shared responsibility security model.",
       "B. Single tenancy.",
@@ -225,7 +225,7 @@
     "correctAnswer": "B"
   },
   {
-    "question": "Under the AWS shared responsibility model, which of the following activities are the customer\u2019s responsibility? (Select TWO)",
+    "question": "Under the AWS shared responsibility model, which of the following activities are the customer’s responsibility? (Select TWO)",
     "options": [
       "A. Patching operating system components for Amazon Relational Database Server (Amazon RDS).",
       "B. Encrypting data on the client-side.",
@@ -259,9 +259,9 @@
     "correctAnswer": "A"
   },
   {
-    "question": "How do customers benefit from Amazon\u2019s massive economies of scale?",
+    "question": "How do customers benefit from Amazon’s massive economies of scale?",
     "options": [
-      "A. Periodic price reductions as the result of Amazon\u2019s operational efficiencies.",
+      "A. Periodic price reductions as the result of Amazon’s operational efficiencies.",
       "B. New Amazon EC2 instance types providing the latest hardware.",
       "C. The ability to scale up and down when needed.",
       "D. Increased reliability in the underlying hardware of Amazon EC2 instances."
@@ -543,6 +543,180 @@
       "B. AWS Organizations.",
       "C. AWS Budgets.",
       "D. AWS Trusted Advisor."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "A user has opened a “Production System Down” support case to get help from AWS Support after a production system disruption. What is the expected response time for this type of support case?",
+    "options": [
+      "A. 12 hours.",
+      "B. 15 minutes.",
+      "C. 24 hours.",
+      "D. One hour."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "When granting permissions to applications running on Amazon EC2 instances, which of the following is considered best practice?",
+    "options": [
+      "A. Generate new IAM access keys every time you delegate permissions.",
+      "B. Store the required AWS credentials directly within the application code.",
+      "C. Use temporary security credentials (IAM roles) instead of long-term access keys.",
+      "D. Do nothing; Applications that run on Amazon EC2 instances do not need permission to interact with other AWS services or resources."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which of the following can an AWS customer use to launch a new Amazon Relational Database Service (Amazon RDS) cluster? (Select TWO.)",
+    "options": [
+      "A. AWS Concierge",
+      "B. AWS CloudFormation",
+      "C. Amazon Simple Storage Service (Amazon S3)",
+      "D. Amazon EC2 Auto Scaling",
+      "E. AWS Management Console"
+    ],
+    "correctAnswer": [
+      "B",
+      "E"
+    ]
+  },
+  {
+    "question": "What factors determine how you are charged when using AWS Lambda? (Choose TWO)",
+    "options": [
+      "A. Storage consumed.",
+      "B. Number of requests to your functions.",
+      "C. Number of volumes.",
+      "D. Placement groups.",
+      "E. Compute time consumed."
+    ],
+    "correctAnswer": [
+      "B",
+      "E"
+    ]
+  },
+  {
+    "question": "Which AWS Service offers an NFS file system that can be mounted concurrently from multiple EC2 instances?",
+    "options": [
+      "A. Amazon Elastic File System.",
+      "B. Amazon Simple Storage Service.",
+      "C. Amazon Elastic Block Store.",
+      "D. AWS Storage Gateway."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "Which of the following are features of Amazon CloudWatch Logs? (Select TWO)",
+    "options": [
+      "A. Summaries by Amazon Simple Notification Service (Amazon SNS).",
+      "B. Free Amazon Elasticsearch Service analytics.",
+      "C. Provided at no charge.",
+      "D. Real-time monitoring.",
+      "E. Adjustable retention."
+    ],
+    "correctAnswer": [
+      "D",
+      "E"
+    ]
+  },
+  {
+    "question": "What is the AWS’ recommendation regarding access keys?",
+    "options": [
+      "A. Delete all access keys and use passwords instead.",
+      "B. Only share them with trusted people.",
+      "C. Rotate them regularly.",
+      "D. Save them within your application code."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Which of the following Cloud Computing deployment models eliminates the need to run and maintain physical data centers?",
+    "options": [
+      "A. On-premises.",
+      "B. IaaS.",
+      "C. PaaS.",
+      "D. Cloud."
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "question": "Which of the following statements describes the AWS Cloud’s agility?",
+    "options": [
+      "A. AWS allows you to host your applications in multiple regions around the world.",
+      "B. AWS provides customizable hardware at the lowest possible cost.",
+      "C. AWS allows you to provision resources in minutes.",
+      "D. AWS allows you to pay upfront to reduce costs."
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "question": "Based on the AWS Shared Responsibility Model, which of the following are the sole responsibility of AWS? (Choose TWO)",
+    "options": [
+      "A. Monitoring network performance.",
+      "B. Installing software on EC2 instances.",
+      "C. Creating hypervisors.",
+      "D. Configuring Access Control Lists (ACLs).",
+      "E. Hardware maintenance."
+    ],
+    "correctAnswer": [
+      "C",
+      "E"
+    ]
+  },
+  {
+    "question": "Which of the following security measures protect access to an AWS account? (Select TWO.)",
+    "options": [
+      "A. Enable AWS CloudTrail.",
+      "B. Grant least privilege access to IAM users.",
+      "C. Create one IAM user and share with many developers and users.",
+      "D. Enable Amazon CloudFront.",
+      "E. Activate multi-factor authentication (MFA) for privileged users."
+    ],
+    "correctAnswer": [
+      "B",
+      "E"
+    ]
+  },
+  {
+    "question": "Which features are included in the AWS Business Support Plan? (Choose TWO)",
+    "options": [
+      "A. 24x7 access to customer service.",
+      "B. Access to Cloud Support Engineers via email only during business hours.",
+      "C. Access to the Infrastructure Event Management (IEM) feature for additional fee.",
+      "D. 24x7 access to the TAM feature.",
+      "E. Partial access to the core Trusted Advisor checks."
+    ],
+    "correctAnswer": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "question": "Where can AWS account owners get a list of all users in their account, including the status of their AWS credentials?",
+    "options": [
+      "A. AWS CloudTrail Trails.",
+      "B. IAM Credential Report.",
+      "C. AWS Artifact reports.",
+      "D. AWS Cost and Usage Report."
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "question": "What is the AWS data warehouse service that supports a high level of query performance on large amounts of datasets?",
+    "options": [
+      "A. Amazon Redshift.",
+      "B. Amazon Kinesis.",
+      "C. Amazon DynamoDB.",
+      "D. Amazon RDS."
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "question": "To protect against data loss, you need to backup your database regularly. What is the most cost-effective storage option that provides immediate retrieval of your backups?",
+    "options": [
+      "A. Amazon S3 Glacier Deep Archive.",
+      "B. Amazon S3 Standard-Infrequent Access.",
+      "C. Amazon S3 Glacier.",
+      "D. Instance Store."
     ],
     "correctAnswer": "B"
   }

@@ -11,26 +11,68 @@
   </script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="font-inter bg-gray-50 text-gray-800">
-  <header class="sticky top-0 z-10 bg-white/80 backdrop-blur">
-    <div class="max-w-5xl mx-auto flex items-center justify-between p-4">
-      <h1 class="text-2xl font-bold"><a href="index.html">AWS Cloud Practitioner Study</a></h1>
-      <nav class="hidden md:flex space-x-4 text-lg">
-        <a class="hover:underline" href="index.html">Home</a>
-        <a class="hover:underline" href="vocabulary.html">Vocabulary</a>
-        <a class="hover:underline" href="flashcards.html">Flashcards</a>
-        <a class="hover:underline" href="exam.html">Practice Exams</a>
-        <a class="hover:underline" href="key-concepts.html">Key Concepts</a>
-        <a class="hover:underline" href="exam-tips.html">Exam Tips</a>
-      </nav>
+<body class="font-inter bg-gray-50 text-gray-800" data-page="exam-tips" data-auth="protected">
+  <header class="sticky top-0 z-30 bg-white/80 backdrop-blur border-b border-indigo-100">
+    <div class="max-w-6xl mx-auto flex items-center justify-between p-4 gap-4">
+      <div class="flex items-center gap-3">
+        <a href="dashboard.html">
+          <img src="images/aws-logo.png" alt="AWS Logo" class="h-12 w-12 object-contain">
+        </a>
+        <h1 class="text-xl md:text-2xl font-bold"><a href="dashboard.html">AWS Cloud Practitioner Study</a></h1>
+      </div>
+      <div class="flex items-center gap-2">
+        <span id="nav-user-name" class="hidden md:inline text-sm text-gray-600"></span>
+        <button data-logout-btn class="auth-secondary-btn header-btn">Logout</button>
+      </div>
     </div>
+    <nav class="max-w-6xl mx-auto px-4 pb-3 flex flex-wrap gap-3 text-sm md:text-base">
+      <a class="topbar-link" href="dashboard.html">Home</a>
+      <a class="topbar-link" href="vocabulary.html">Vocabulary</a>
+      <a class="topbar-link" href="flashcards.html">Flashcards</a>
+      <a class="topbar-link" href="exam.html">Practice Exams</a>
+      <a class="topbar-link" href="exam.html#review-section">Review Exams</a>
+      <a class="topbar-link" href="key-concepts.html">Key Concepts</a>
+      <a class="topbar-link topbar-link-active" href="exam-tips.html">Exam Tips</a>
+    </nav>
   </header>
   <main>
-    <div class="max-w-3xl mx-auto p-4 space-y-4">
-      <div class="bg-blue-50 border-l-4 border-blue-400 p-4">
+    <div id="exam-tips-page" class="max-w-5xl mx-auto p-4 space-y-4">
+      <section class="card static-card study-hero">
+        <p class="auth-kicker mb-1">EXAM READINESS</p>
+        <h2 class="text-2xl md:text-3xl font-bold mb-2">Exam Tips</h2>
+        <p class="text-gray-600">Filter tips quickly, expand the sections you need, and keep an exam-day checklist before your attempt.</p>
+      </section>
+
+      <section class="card static-card study-toolbar">
+        <label for="exam-tips-search" class="study-toolbar-label">Search by tip keyword (for example: timing, scoring, resources)</label>
+        <input id="exam-tips-search" type="text" class="study-search-input" placeholder="Search tips and advice...">
+        <div class="study-toolbar-actions">
+          <button id="exam-tips-expand-all" type="button" class="study-btn">Expand All</button>
+          <button id="exam-tips-collapse-all" type="button" class="study-btn study-btn-secondary">Collapse All</button>
+          <button id="exam-tips-clear-search" type="button" class="study-btn study-btn-ghost">Clear Search</button>
+          <span id="exam-tips-counter" class="study-counter">Showing 0/0 sections</span>
+        </div>
+        <div id="exam-tips-quick-nav" class="study-quick-nav"></div>
+      </section>
+
+      <section class="card static-card tips-highlight">
         <p class="font-semibold">Did you know? Only 50 of the 65 questions count toward your score.</p>
-      </div>
-      <details class="card" open>
+      </section>
+
+      <section id="exam-day-checklist" class="card static-card tips-checklist">
+        <div class="tips-checklist-header">
+          <h3 class="text-lg font-bold">Exam Day Checklist</h3>
+          <button id="exam-checklist-reset" type="button" class="study-btn study-btn-ghost">Reset Checklist</button>
+        </div>
+        <label class="tips-check-item"><input data-check-id="id-check" type="checkbox"> Government ID ready</label>
+        <label class="tips-check-item"><input data-check-id="quiet-room" type="checkbox"> Quiet room and stable internet</label>
+        <label class="tips-check-item"><input data-check-id="time-slot" type="checkbox"> Calendar blocked for 2 hours</label>
+        <label class="tips-check-item"><input data-check-id="review-notes" type="checkbox"> Last review of weak topics</label>
+      </section>
+
+      <p id="exam-tips-empty" class="card static-card study-empty" hidden>No sections match your search. Try another keyword.</p>
+
+      <details id="tip-exam-structure" class="card exam-tip-section" open>
         <summary class="font-semibold cursor-pointer mb-2">1. Exam Structure</summary>
         <ul class="list-disc ml-6 space-y-1">
           <li>Total number of questions: 65</li>
@@ -43,7 +85,7 @@
           <li>Cost: $100 USD</li>
         </ul>
       </details>
-      <details class="card">
+      <details id="tip-scoring" class="card exam-tip-section">
         <summary class="font-semibold cursor-pointer mb-2">2. Scoring</summary>
         <ul class="list-disc ml-6 space-y-1">
           <li>Only correct answers count toward your score</li>
@@ -52,7 +94,7 @@
           <li>AWS does not reveal the exact weight of each domain</li>
         </ul>
       </details>
-      <details class="card">
+      <details id="tip-strategy" class="card exam-tip-section">
         <summary class="font-semibold cursor-pointer mb-2">3. Strategy</summary>
         <ul class="list-disc ml-6 space-y-1">
           <li>Flag questions to return to them later if unsure</li>
@@ -62,7 +104,7 @@
           <li>Focus on understanding concepts, not memorizing definitions</li>
         </ul>
       </details>
-      <details class="card">
+      <details id="tip-time-management" class="card exam-tip-section">
         <summary class="font-semibold cursor-pointer mb-2">4. Time Management</summary>
         <ul class="list-disc ml-6 space-y-1">
           <li>Use the first 60 minutes to go through all questions</li>
@@ -70,7 +112,7 @@
           <li>Avoid spending too much time on any single question</li>
         </ul>
       </details>
-      <details class="card">
+      <details id="tip-resources" class="card exam-tip-section">
         <summary class="font-semibold cursor-pointer mb-2">5. Resources</summary>
         <ul class="list-disc ml-6 space-y-1">
           <li><a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank" class="text-blue-600 hover:underline">Official AWS Certification Page</a></li>
@@ -83,7 +125,7 @@
     </div>
   </main>
   <footer class="py-6 text-center bg-gray-100">
-    <a class="hover:underline" href="index.html">Back to Home</a>
+    <a class="hover:underline" href="dashboard.html">Back to Dashboard</a>
   </footer>
   <script src="js/main.js"></script>
 </body>
