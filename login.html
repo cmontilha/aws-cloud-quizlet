@@ -31,8 +31,8 @@
     <div class="auth-background"></div>
     <section class="auth-panel card static-card">
       <p class="auth-kicker">ACCESS DASHBOARD</p>
-      <h2 class="text-3xl font-bold mb-2">Login</h2>
-      <p class="text-gray-600 mb-6">Sign in to access your AWS Cloud Practitioner study panel.</p>
+      <h2 id="login-page-title" class="text-3xl font-bold mb-2">Login</h2>
+      <p id="login-page-subtitle" class="text-gray-600 mb-6">Sign in to access your AWS Cloud Practitioner study panel.</p>
 
       <form id="login-form" class="auth-form-stack">
         <label for="login-email">Email</label>
@@ -40,12 +40,24 @@
 
         <label for="login-password">Password</label>
         <input id="login-password" name="password" type="password" required minlength="8" autocomplete="current-password" class="auth-input" />
-        <div class="auth-password-toggle">
-          <input id="login-show-password" name="showPassword" type="checkbox" />
-          <label for="login-show-password">Show password</label>
+        <div class="auth-password-row">
+          <div class="auth-password-toggle">
+            <input id="login-show-password" name="showPassword" type="checkbox" />
+            <label for="login-show-password">Show password</label>
+          </div>
+          <button id="forgot-password-btn" type="button" class="auth-inline-btn">Forgot password?</button>
         </div>
 
         <button type="submit" class="auth-submit-btn">Login</button>
+      </form>
+      <form id="recovery-form" class="auth-form-stack" hidden>
+        <label for="recovery-password">New password</label>
+        <input id="recovery-password" name="password" type="password" required minlength="8" autocomplete="new-password" class="auth-input" />
+
+        <label for="recovery-confirm-password">Confirm new password</label>
+        <input id="recovery-confirm-password" name="confirmPassword" type="password" required minlength="8" autocomplete="new-password" class="auth-input" />
+
+        <button type="submit" class="auth-submit-btn">Update password</button>
       </form>
 
       <p id="auth-page-message" class="auth-page-message"></p>

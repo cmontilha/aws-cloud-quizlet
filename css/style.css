@@ -898,6 +898,14 @@ button:disabled {
   margin-top: 0.1rem;
 }
 
+.auth-password-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+}
+
 .auth-password-toggle input[type="checkbox"] {
   width: 1rem;
   height: 1rem;
@@ -911,6 +919,28 @@ button:disabled {
   font-weight: 500;
   color: #4b5563;
   cursor: pointer;
+}
+
+.auth-inline-btn {
+  border: 0;
+  background: transparent;
+  color: #4f46e5;
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.auth-inline-btn:hover {
+  color: #3730a3;
+}
+
+.auth-inline-btn:disabled {
+  opacity: 0.65;
+  cursor: default;
+  text-decoration: none;
 }
 
 .auth-submit-btn {

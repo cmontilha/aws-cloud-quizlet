@@ -320,8 +320,31 @@ function normalizeVocabularyItem(entry) {
 function parseAuthError(error) {
   if (!error) return 'Unexpected authentication error.';
   if (typeof error === 'string') return error;
-  if (typeof error.message === 'string' && error.message.trim()) return error.message;
-  if (error.response && typeof error.response.message === 'string') return error.response.message;
+
+  const origin = window && window.location
+    ? (window.location.protocol === 'file:' ? 'file://' : (window.location.origin || '(unknown origin)'))
+    : '(unknown origin)';
+
+  if (typeof error.message === 'string' && error.message.trim()) {
+    const message = error.message.trim();
+    const normalizedMessage = message.toLowerCase();
+    if (normalizedMessage.includes('failed to fetch') || normalizedMessage.includes('networkerror')) {
+      if (origin === 'file://') {
+        return 'Authentication is blocked on file://. Start a local server and open the app on http://localhost:5500 (or another allowed host).';
+      }
+      return `Could not reach Appwrite from ${origin}. Add this host as a Web Platform in Appwrite and try again.`;
+    }
+    return message;
+  }
+
+  if (error.response && typeof error.response.message === 'string') {
+    const responseMessage = error.response.message;
+    if (String(error.response.type || '').trim() === 'general_unknown_origin') {
+      return `Invalid Origin for ${origin}. Add this host as a Web Platform in Appwrite.`;
+    }
+    return responseMessage;
+  }
+
   return 'Authentication request failed.';
 }
 
@@ -509,6 +532,30 @@ async function createAuthAccount(name, email, password) {
   return authState.account.create(authState.appwrite.ID.unique(), email, password, name);
 }
 
+async function sendPasswordRecoveryEmail(email, redirectUrl) {
+  if (!authState.account) {
+    throw new Error('Appwrite account client is not initialized.');
+  }
+
+  if (typeof authState.account.createRecovery === 'function') {
+    return authState.account.createRecovery(email, redirectUrl);
+  }
+
+  throw new Error('Password recovery method not found in SDK.');
+}
+
+async function completePasswordRecovery(userId, secret, password, confirmPassword) {
+  if (!authState.account) {
+    throw new Error('Appwrite account client is not initialized.');
+  }
+
+  if (typeof authState.account.updateRecovery === 'function') {
+    return authState.account.updateRecovery(userId, secret, password, confirmPassword);
+  }
+
+  throw new Error('Password recovery update method not found in SDK.');
+}
+
 async function logoutCurrentSession() {
   if (!authState.account) {
     throw new Error('Appwrite account client is not initialized.');
@@ -573,14 +620,69 @@ function setAuthPageMessage(message, type = 'info') {
 }
 
 function initLoginPage() {
-  const form = document.getElementById('login-form');
-  if (!form) return;
+  const loginForm = document.getElementById('login-form');
+  if (!loginForm) return;
 
+  const recoveryForm = document.getElementById('recovery-form');
+  const pageTitle = document.getElementById('login-page-title');
+  const pageSubtitle = document.getElementById('login-page-subtitle');
+  const emailInput = document.getElementById('login-email');
   const passwordInput = document.getElementById('login-password');
   const showPasswordCheckbox = document.getElementById('login-show-password');
+  const forgotPasswordButton = document.getElementById('forgot-password-btn');
+
+  const params = new URLSearchParams(window.location.search);
+  const recoveryUserId = String(params.get('userId') || '').trim();
+  const recoverySecret = String(params.get('secret') || '').trim();
+  const hasRecoveryTokens = Boolean(recoveryUserId && recoverySecret);
+
+  if (hasRecoveryTokens && recoveryForm) {
+    loginForm.hidden = true;
+    recoveryForm.hidden = false;
+    if (pageTitle) pageTitle.textContent = 'Reset Password';
+    if (pageSubtitle) pageSubtitle.textContent = 'Create a new password for your account.';
+  } else if (recoveryForm) {
+    recoveryForm.hidden = true;
+    loginForm.hidden = false;
+    if (pageTitle) pageTitle.textContent = 'Login';
+    if (pageSubtitle) pageSubtitle.textContent = 'Sign in to access your AWS Cloud Practitioner study panel.';
+  }
+
   if (passwordInput && showPasswordCheckbox) {
     showPasswordCheckbox.addEventListener('change', () => {
       passwordInput.type = showPasswordCheckbox.checked ? 'text' : 'password';
+    });
+  }
+
+  if (forgotPasswordButton) {
+    forgotPasswordButton.addEventListener('click', async () => {
+      if (!authState.ready) {
+        setAuthPageMessage(authState.error || 'Authentication is not ready yet.', 'error');
+        return;
+      }
+
+      const email = String(emailInput && emailInput.value ? emailInput.value : '').trim();
+      if (!email) {
+        setAuthPageMessage('Enter your email first, then click "Forgot password?".', 'error');
+        if (emailInput) emailInput.focus();
+        return;
+      }
+
+      const originalText = forgotPasswordButton.textContent;
+      forgotPasswordButton.disabled = true;
+      forgotPasswordButton.textContent = 'Sending...';
+      setAuthPageMessage('Sending password reset email...', 'info');
+
+      try {
+        const recoveryUrl = `${window.location.origin}${window.location.pathname}`;
+        await sendPasswordRecoveryEmail(email, recoveryUrl);
+        setAuthPageMessage('Password reset email sent. Check your inbox and spam folder.', 'success');
+      } catch (error) {
+        setAuthPageMessage(parseAuthError(error), 'error');
+      } finally {
+        forgotPasswordButton.disabled = false;
+        forgotPasswordButton.textContent = originalText || 'Forgot password?';
+      }
     });
   }
 
@@ -588,10 +690,10 @@ function initLoginPage() {
     setAuthPageMessage(authState.error, 'error');
   }
 
-  form.addEventListener('submit', async (event) => {
+  loginForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    const formData = new FormData(form);
+    const formData = new FormData(loginForm);
     const email = String(formData.get('email') || '').trim();
     const password = String(formData.get('password') || '');
 
@@ -600,7 +702,7 @@ function initLoginPage() {
       return;
     }
 
-    const submitButton = form.querySelector('button[type="submit"]');
+    const submitButton = loginForm.querySelector('button[type="submit"]');
     if (submitButton) submitButton.disabled = true;
     setAuthPageMessage('Signing in...', 'info');
 
@@ -614,6 +716,45 @@ function initLoginPage() {
       if (submitButton) submitButton.disabled = false;
     }
   });
+
+  if (recoveryForm && hasRecoveryTokens) {
+    recoveryForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(recoveryForm);
+      const password = String(formData.get('password') || '');
+      const confirmPassword = String(formData.get('confirmPassword') || '');
+
+      if (password.length < 8) {
+        setAuthPageMessage('Password must have at least 8 characters.', 'error');
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        setAuthPageMessage('Password confirmation does not match.', 'error');
+        return;
+      }
+
+      const submitButton = recoveryForm.querySelector('button[type="submit"]');
+      if (submitButton) submitButton.disabled = true;
+      setAuthPageMessage('Updating password...', 'info');
+
+      try {
+        await completePasswordRecovery(recoveryUserId, recoverySecret, password, confirmPassword);
+        setAuthPageMessage('Password updated successfully. You can log in now.', 'success');
+        recoveryForm.reset();
+        recoveryForm.hidden = true;
+        loginForm.hidden = false;
+        if (pageTitle) pageTitle.textContent = 'Login';
+        if (pageSubtitle) pageSubtitle.textContent = 'Sign in to access your AWS Cloud Practitioner study panel.';
+        window.history.replaceState({}, '', window.location.pathname);
+      } catch (error) {
+        setAuthPageMessage(parseAuthError(error), 'error');
+      } finally {
+        if (submitButton) submitButton.disabled = false;
+      }
+    });
+  }
 }
 
 function initRegisterPage() {
