@@ -891,6 +891,28 @@ button:disabled {
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
 }
 
+.auth-password-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.1rem;
+}
+
+.auth-password-toggle input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: #4f46e5;
+  cursor: pointer;
+}
+
+.auth-password-toggle label {
+  margin: 0;
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: #4b5563;
+  cursor: pointer;
+}
+
 .auth-submit-btn {
   margin: 0.8rem 0 0;
   border-radius: 0.55rem;

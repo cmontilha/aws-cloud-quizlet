@@ -576,6 +576,14 @@ function initLoginPage() {
   const form = document.getElementById('login-form');
   if (!form) return;
 
+  const passwordInput = document.getElementById('login-password');
+  const showPasswordCheckbox = document.getElementById('login-show-password');
+  if (passwordInput && showPasswordCheckbox) {
+    showPasswordCheckbox.addEventListener('change', () => {
+      passwordInput.type = showPasswordCheckbox.checked ? 'text' : 'password';
+    });
+  }
+
   if (!authState.ready && authState.error) {
     setAuthPageMessage(authState.error, 'error');
   }
