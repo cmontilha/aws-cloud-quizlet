@@ -1873,6 +1873,494 @@ async function openReviewAttempt(attemptId) {
   showScreen('review-screen');
 }
 
+// Mastery Mode
+const MASTERY_STORAGE_PREFIX = 'aws-cloud-quizlet-mastery-progress';
+const MASTERY_EXAM_FILES = Array.from({ length: 13 }, (_, idx) => `exam${idx + 1}.json`);
+
+let masteryQuestions = [];
+let masteryQuestionsById = new Map();
+let masteryKnown = {};
+let masteryQueue = [];
+let masteryCurrentQuestion = null;
+let masteryCurrentResolution = '';
+let masterySessionAttempts = 0;
+let masterySessionCorrect = 0;
+let masteryCorrectStreak = 0;
+let masteryControlsBound = false;
+
+function hashString(value) {
+  let hash = 2166136261;
+  const input = String(value || '');
+  for (let idx = 0; idx < input.length; idx += 1) {
+    hash ^= input.charCodeAt(idx);
+    hash = Math.imul(hash, 16777619);
+  }
+  return (hash >>> 0).toString(36);
+}
+
+function shuffleArrayInPlace(items) {
+  for (let idx = items.length - 1; idx > 0; idx -= 1) {
+    const randomIndex = Math.floor(Math.random() * (idx + 1));
+    [items[idx], items[randomIndex]] = [items[randomIndex], items[idx]];
+  }
+}
+
+function buildMasteryQuestionKey(question) {
+  const normalized = normalizeStudySearchText(question && question.question ? question.question : '');
+  return normalized.replace(/\s+/g, ' ').trim();
+}
+
+function buildMasteryQuestionId(question) {
+  const questionKey = buildMasteryQuestionKey(question);
+  if (questionKey) {
+    return `mq-${hashString(questionKey)}`;
+  }
+
+  const fallback = `${String(question && question.question ? question.question : '').trim()}|${String(question && question.correctAnswer ? question.correctAnswer : '').trim()}`;
+  return `mq-${hashString(fallback)}`;
+}
+
+function isValidMasteryQuestion(question) {
+  if (!question || typeof question !== 'object') return false;
+  if (typeof question.question !== 'string' || !question.question.trim()) return false;
+  if (!Array.isArray(question.options) || !question.options.length) return false;
+
+  if (Array.isArray(question.correctAnswer)) {
+    return question.correctAnswer.length > 0 && question.correctAnswer.every(answer => typeof answer === 'string' && answer.trim());
+  }
+  return typeof question.correctAnswer === 'string' && question.correctAnswer.trim().length > 0;
+}
+
+async function loadMasteryQuestionBank() {
+  const loadedSets = await Promise.all(
+    MASTERY_EXAM_FILES.map(async (fileName) => {
+      const response = await fetch(`data/${fileName}`);
+      if (!response.ok) {
+        throw new Error(`Failed to load ${fileName}.`);
+      }
+      const questions = await response.json();
+      return Array.isArray(questions) ? questions : [];
+    })
+  );
+
+  const deduplicated = new Map();
+  loadedSets.flat().forEach((question) => {
+    if (!isValidMasteryQuestion(question)) return;
+
+    const questionKey = buildMasteryQuestionKey(question);
+    if (!questionKey) return;
+    if (deduplicated.has(questionKey)) return;
+
+    const masteryId = buildMasteryQuestionId(question);
+    deduplicated.set(questionKey, {
+      ...question,
+      _id: masteryId
+    });
+  });
+
+  return [...deduplicated.values()];
+}
+
+function getMasteryStorageKey() {
+  const userId = authState.user && authState.user.$id ? authState.user.$id : 'guest';
+  return `${MASTERY_STORAGE_PREFIX}:${userId}`;
+}
+
+function loadMasteryProgress() {
+  try {
+    const raw = localStorage.getItem(getMasteryStorageKey());
+    if (!raw) return {};
+
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== 'object' || !Array.isArray(parsed.knownIds)) return {};
+
+    return parsed.knownIds.reduce((accumulator, questionId) => {
+      if (typeof questionId === 'string' && questionId.trim()) {
+        accumulator[questionId] = true;
+      }
+      return accumulator;
+    }, {});
+  } catch (error) {
+    return {};
+  }
+}
+
+function saveMasteryProgress() {
+  try {
+    const knownIds = Object.keys(masteryKnown).filter(questionId => masteryKnown[questionId] && masteryQuestionsById.has(questionId));
+    localStorage.setItem(getMasteryStorageKey(), JSON.stringify({ knownIds }));
+  } catch (error) {
+    // Ignore storage write failures.
+  }
+}
+
+function getMasteryKnownCount() {
+  return masteryQuestions.reduce((count, question) => {
+    if (masteryKnown[question._id]) return count + 1;
+    return count;
+  }, 0);
+}
+
+function setMasteryFeedback(message, type = 'info') {
+  const feedback = document.getElementById('mastery-feedback');
+  if (!feedback) return;
+  feedback.className = `mastery-feedback ${type}`;
+  feedback.textContent = message;
+}
+
+function renderMasteryKnownItems() {
+  const container = document.getElementById('mastery-known-items');
+  if (!container) return;
+
+  const knownQuestions = masteryQuestions.filter(question => masteryKnown[question._id]);
+  if (!knownQuestions.length) {
+    container.innerHTML = '<p class="mastery-known-item">No mastered questions yet.</p>';
+    return;
+  }
+
+  container.innerHTML = '';
+  knownQuestions.forEach((question, idx) => {
+    const row = document.createElement('p');
+    row.className = 'mastery-known-item';
+    row.textContent = `${idx + 1}. ${question.question}`;
+    container.appendChild(row);
+  });
+}
+
+function updateMasteryCounters() {
+  const total = masteryQuestions.length;
+  const mastered = getMasteryKnownCount();
+  const learning = Math.max(0, total - mastered);
+  const percent = total ? Math.round((mastered / total) * 100) : 0;
+
+  const totalEl = document.getElementById('mastery-total-count');
+  const masteredEl = document.getElementById('mastery-mastered-count');
+  const learningEl = document.getElementById('mastery-learning-count');
+  const progressFill = document.getElementById('mastery-progress-fill');
+  const progressText = document.getElementById('mastery-progress-text');
+  const sessionText = document.getElementById('mastery-session-text');
+  const completeText = document.getElementById('mastery-complete-text');
+
+  if (totalEl) totalEl.textContent = String(total);
+  if (masteredEl) masteredEl.textContent = String(mastered);
+  if (learningEl) learningEl.textContent = String(learning);
+  if (progressFill) progressFill.style.width = `${percent}%`;
+  if (progressText) progressText.textContent = `${percent}% mastered (${mastered}/${total})`;
+  if (sessionText) sessionText.textContent = `Session accuracy: ${masterySessionCorrect}/${masterySessionAttempts} | Streak: ${masteryCorrectStreak}`;
+  if (completeText) completeText.textContent = `You mastered ${mastered} out of ${total} questions in this bank.`;
+}
+
+function buildMasteryQueue() {
+  masteryQueue = masteryQuestions.filter(question => !masteryKnown[question._id]);
+  shuffleArrayInPlace(masteryQueue);
+  masteryCurrentQuestion = masteryQueue.length ? masteryQueue[0] : null;
+  masteryCurrentResolution = '';
+}
+
+function updateMasteryOptionSelectionState() {
+  const optionsContainer = document.getElementById('mastery-options');
+  if (!optionsContainer) return;
+
+  optionsContainer.querySelectorAll('.mastery-option').forEach((label) => {
+    const input = label.querySelector('input');
+    label.classList.toggle('is-selected', Boolean(input && input.checked));
+  });
+}
+
+function getMasteryCurrentAnswer() {
+  if (!masteryCurrentQuestion) return null;
+  const optionsContainer = document.getElementById('mastery-options');
+  if (!optionsContainer) return null;
+
+  if (Array.isArray(masteryCurrentQuestion.correctAnswer)) {
+    const selected = [...optionsContainer.querySelectorAll('input:checked')]
+      .map(input => input.value)
+      .sort();
+    return selected.length ? selected : null;
+  }
+
+  const selected = optionsContainer.querySelector('input:checked');
+  return selected ? selected.value : null;
+}
+
+function revealMasteryAnswer(answer) {
+  if (!masteryCurrentQuestion) return;
+
+  const correctLetters = getAnswerLetters(masteryCurrentQuestion.correctAnswer);
+  const selectedLetters = getAnswerLetters(answer);
+  const optionsContainer = document.getElementById('mastery-options');
+  if (!optionsContainer) return;
+
+  optionsContainer.querySelectorAll('.mastery-option').forEach((label) => {
+    const optionLetter = String(label.dataset.letter || '').trim();
+    const input = label.querySelector('input');
+
+    label.classList.remove('is-selected');
+    if (correctLetters.includes(optionLetter)) {
+      label.classList.add('is-correct');
+    }
+    if (selectedLetters.includes(optionLetter) && !correctLetters.includes(optionLetter)) {
+      label.classList.add('is-wrong');
+    }
+
+    if (input) input.disabled = true;
+  });
+}
+
+function renderMasteryQuestion() {
+  const loadingCard = document.getElementById('mastery-loading');
+  const questionCard = document.getElementById('mastery-question-card');
+  const completeCard = document.getElementById('mastery-complete-card');
+
+  if (loadingCard) loadingCard.hidden = true;
+  if (!questionCard || !completeCard) return;
+
+  if (!masteryQueue.length) {
+    masteryCurrentQuestion = null;
+    questionCard.hidden = true;
+    completeCard.hidden = false;
+    updateMasteryCounters();
+    renderMasteryKnownItems();
+    return;
+  }
+
+  completeCard.hidden = true;
+  questionCard.hidden = false;
+
+  masteryCurrentQuestion = masteryQueue[0];
+  const question = masteryCurrentQuestion;
+  if (!question) return;
+
+  const questionCounter = document.getElementById('mastery-question-counter');
+  const questionType = document.getElementById('mastery-question-type');
+  const questionText = document.getElementById('mastery-question-text');
+  const optionsContainer = document.getElementById('mastery-options');
+  const checkButton = document.getElementById('mastery-check-btn');
+  const dontKnowButton = document.getElementById('mastery-dont-know-btn');
+  const nextButton = document.getElementById('mastery-next-btn');
+
+  if (questionCounter) {
+    questionCounter.textContent = `Learning queue: ${masteryQueue.length} remaining`;
+  }
+  if (questionType) {
+    questionType.textContent = Array.isArray(question.correctAnswer) ? 'Multiple answer' : 'Single answer';
+  }
+  if (questionText) {
+    questionText.textContent = question.question;
+  }
+
+  if (!optionsContainer) return;
+
+  optionsContainer.innerHTML = '';
+  const isMultiAnswer = Array.isArray(question.correctAnswer);
+
+  question.options.forEach((optionText) => {
+    const optionLetter = extractOptionLetter(optionText);
+    const label = document.createElement('label');
+    label.className = 'mastery-option';
+    label.dataset.letter = optionLetter;
+
+    const input = document.createElement('input');
+    input.type = isMultiAnswer ? 'checkbox' : 'radio';
+    input.name = isMultiAnswer ? `mastery-option-${question._id}` : 'mastery-option';
+    input.value = optionLetter;
+
+    const text = document.createElement('span');
+    text.textContent = optionText;
+
+    input.addEventListener('change', () => {
+      updateMasteryOptionSelectionState();
+    });
+
+    label.appendChild(input);
+    label.appendChild(text);
+    optionsContainer.appendChild(label);
+  });
+
+  updateMasteryOptionSelectionState();
+  masteryCurrentResolution = '';
+
+  if (checkButton) checkButton.disabled = false;
+  if (dontKnowButton) dontKnowButton.disabled = false;
+  if (nextButton) nextButton.hidden = true;
+
+  setMasteryFeedback(`Select ${isMultiAnswer ? 'one or more options' : 'one option'} and click Check Answer.`, 'info');
+  updateMasteryCounters();
+  renderMasteryKnownItems();
+}
+
+function resolveMasteryCurrentQuestionAs(shouldMaster) {
+  if (!masteryQueue.length) return;
+  const current = masteryQueue.shift();
+  if (!current) return;
+
+  if (!shouldMaster) {
+    masteryQueue.push(current);
+  }
+
+  masteryCurrentQuestion = masteryQueue.length ? masteryQueue[0] : null;
+}
+
+function handleMasteryCheckAnswer() {
+  if (!masteryCurrentQuestion) return;
+
+  const answer = getMasteryCurrentAnswer();
+  if (!isAnswered(answer)) {
+    setMasteryFeedback("Select an option first, or click \"I don't know yet\".", 'error');
+    return;
+  }
+
+  masterySessionAttempts += 1;
+  const isCorrect = isAnswerCorrect(masteryCurrentQuestion, answer);
+  revealMasteryAnswer(answer);
+
+  const checkButton = document.getElementById('mastery-check-btn');
+  const dontKnowButton = document.getElementById('mastery-dont-know-btn');
+  const nextButton = document.getElementById('mastery-next-btn');
+
+  if (checkButton) checkButton.disabled = true;
+  if (dontKnowButton) dontKnowButton.disabled = true;
+  if (nextButton) nextButton.hidden = false;
+
+  if (isCorrect) {
+    masteryCurrentResolution = 'correct';
+    masteryCorrectStreak += 1;
+    masterySessionCorrect += 1;
+    masteryKnown[masteryCurrentQuestion._id] = true;
+    saveMasteryProgress();
+    setMasteryFeedback(`Correct. Moved to mastered list. Streak: ${masteryCorrectStreak}.`, 'success');
+  } else {
+    masteryCurrentResolution = 'wrong';
+    masteryCorrectStreak = 0;
+    const explanation = buildQuestionExplanation(masteryCurrentQuestion);
+    setMasteryFeedback(`Not correct. ${explanation}`, 'error');
+  }
+
+  updateMasteryCounters();
+  renderMasteryKnownItems();
+}
+
+function handleMasteryDontKnow() {
+  if (!masteryQueue.length) return;
+
+  masterySessionAttempts += 1;
+  masteryCorrectStreak = 0;
+
+  resolveMasteryCurrentQuestionAs(false);
+  renderMasteryQuestion();
+  setMasteryFeedback('No problem. This question remains in your learning queue.', 'info');
+}
+
+function handleMasteryNextQuestion() {
+  if (!masteryQueue.length) return;
+
+  resolveMasteryCurrentQuestionAs(masteryCurrentResolution === 'correct');
+  masteryCurrentResolution = '';
+  renderMasteryQuestion();
+}
+
+function handleMasteryShuffleQueue() {
+  if (masteryQueue.length < 2) {
+    setMasteryFeedback('Queue is too short to shuffle right now.', 'info');
+    return;
+  }
+
+  const currentQuestionId = masteryCurrentQuestion ? masteryCurrentQuestion._id : '';
+  shuffleArrayInPlace(masteryQueue);
+
+  if (currentQuestionId) {
+    const idx = masteryQueue.findIndex(question => question._id === currentQuestionId);
+    if (idx > 0) {
+      [masteryQueue[0], masteryQueue[idx]] = [masteryQueue[idx], masteryQueue[0]];
+    }
+  }
+
+  renderMasteryQuestion();
+  setMasteryFeedback('Learning queue shuffled.', 'info');
+}
+
+function resetMasteryProgress() {
+  masteryKnown = {};
+  masterySessionAttempts = 0;
+  masterySessionCorrect = 0;
+  masteryCorrectStreak = 0;
+  saveMasteryProgress();
+  buildMasteryQueue();
+  renderMasteryQuestion();
+}
+
+function handleMasteryResetProgress() {
+  if (!window.confirm('Reset all mastered questions for the current user?')) return;
+  resetMasteryProgress();
+}
+
+function bindMasteryControls() {
+  if (masteryControlsBound) return;
+
+  const checkButton = document.getElementById('mastery-check-btn');
+  const dontKnowButton = document.getElementById('mastery-dont-know-btn');
+  const nextButton = document.getElementById('mastery-next-btn');
+  const shuffleButton = document.getElementById('mastery-shuffle-btn');
+  const resetButton = document.getElementById('mastery-reset-btn');
+  const restartButton = document.getElementById('mastery-restart-btn');
+
+  if (checkButton) checkButton.addEventListener('click', handleMasteryCheckAnswer);
+  if (dontKnowButton) dontKnowButton.addEventListener('click', handleMasteryDontKnow);
+  if (nextButton) nextButton.addEventListener('click', handleMasteryNextQuestion);
+  if (shuffleButton) shuffleButton.addEventListener('click', handleMasteryShuffleQueue);
+  if (resetButton) resetButton.addEventListener('click', handleMasteryResetProgress);
+  if (restartButton) restartButton.addEventListener('click', () => {
+    resetMasteryProgress();
+  });
+
+  masteryControlsBound = true;
+}
+
+async function initMasteryPage() {
+  const container = document.getElementById('mastery-mode-page');
+  if (!container) return;
+
+  const loadingCard = document.getElementById('mastery-loading');
+  const questionCard = document.getElementById('mastery-question-card');
+  const completeCard = document.getElementById('mastery-complete-card');
+
+  bindMasteryControls();
+
+  if (loadingCard) {
+    loadingCard.hidden = false;
+    loadingCard.className = 'card static-card mastery-loading-card';
+    loadingCard.textContent = 'Loading question bank...';
+  }
+  if (questionCard) questionCard.hidden = true;
+  if (completeCard) completeCard.hidden = true;
+
+  try {
+    masteryQuestions = await loadMasteryQuestionBank();
+    masteryQuestionsById = new Map(masteryQuestions.map(question => [question._id, question]));
+
+    masteryKnown = loadMasteryProgress();
+    Object.keys(masteryKnown).forEach((questionId) => {
+      if (!masteryQuestionsById.has(questionId)) {
+        delete masteryKnown[questionId];
+      }
+    });
+    saveMasteryProgress();
+
+    buildMasteryQueue();
+    updateMasteryCounters();
+    renderMasteryKnownItems();
+    renderMasteryQuestion();
+  } catch (error) {
+    if (loadingCard) {
+      loadingCard.hidden = false;
+      loadingCard.className = 'card static-card mastery-loading-card';
+      loadingCard.textContent = `Could not load mastery questions. ${error && error.message ? error.message : ''}`.trim();
+    }
+    if (questionCard) questionCard.hidden = true;
+    if (completeCard) completeCard.hidden = true;
+  }
+}
+
 async function bootstrapApp() {
   await initAuthClient();
   if (!applyRouteGuard()) return;
@@ -1885,6 +2373,7 @@ async function bootstrapApp() {
   initExamPage();
   initKeyConceptsPage();
   initExamTipsPage();
+  initMasteryPage();
 
   if (document.getElementById('vocab-list')) {
     loadVocabulary();

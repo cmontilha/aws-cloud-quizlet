@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mastery Mode</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { inter: ['Inter', 'sans-serif'] } } } }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-inter bg-gray-50 text-gray-800" data-page="mastery" data-auth="protected">
+  <header class="sticky top-0 z-30 bg-white/80 backdrop-blur border-b border-indigo-100">
+    <div class="max-w-6xl mx-auto flex items-center justify-between p-4 gap-4">
+      <div class="flex items-center gap-3">
+        <a href="dashboard.html">
+          <img src="images/aws-logo.png" alt="AWS Logo" class="h-12 w-12 object-contain">
+        </a>
+        <h1 class="text-xl md:text-2xl font-bold"><a href="dashboard.html">AWS Cloud Practitioner Study</a></h1>
+      </div>
+      <div class="flex items-center gap-2">
+        <span id="nav-user-name" class="hidden md:inline text-sm text-gray-600"></span>
+        <button data-logout-btn class="auth-secondary-btn header-btn">Logout</button>
+      </div>
+    </div>
+    <nav class="max-w-6xl mx-auto px-4 pb-3 flex flex-wrap gap-3 text-sm md:text-base">
+      <a class="topbar-link" href="dashboard.html">Home</a>
+      <a class="topbar-link" href="vocabulary.html">Vocabulary</a>
+      <a class="topbar-link" href="flashcards.html">Flashcards</a>
+      <a class="topbar-link" href="exam.html">Practice Exams</a>
+      <a class="topbar-link" href="exam.html#review-section">Review Exams</a>
+      <a class="topbar-link" href="key-concepts.html">Key Concepts</a>
+      <a class="topbar-link topbar-link-active" href="mastery.html">Mastery Mode</a>
+      <a class="topbar-link" href="exam-tips.html">Exam Tips</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="mastery-mode-page" class="max-w-6xl mx-auto px-4 py-8">
+      <div class="card static-card mastery-hero mb-5">
+        <p class="auth-kicker mb-1">ADAPTIVE LEARNING MODE</p>
+        <h2 class="text-3xl font-bold mb-2">Question Mastery</h2>
+        <p class="text-slate-700">Practice with a rotating queue: correct answers go to your mastered list, missed or unknown answers return to your learning queue until you dominate every question.</p>
+        <p class="text-sm text-slate-500 mt-2">Progress is saved for your signed-in user, so mastered questions stay mastered when you return.</p>
+      </div>
+
+      <div class="mastery-layout">
+        <aside class="card static-card mastery-sidebar">
+          <h3 class="text-lg font-semibold mb-3">Progress</h3>
+
+          <div class="mastery-stats-grid">
+            <div class="mastery-stat-card">
+              <p class="mastery-stat-label">Total</p>
+              <p id="mastery-total-count" class="mastery-stat-value">0</p>
+            </div>
+            <div class="mastery-stat-card mastery-stat-card-success">
+              <p class="mastery-stat-label">Mastered</p>
+              <p id="mastery-mastered-count" class="mastery-stat-value">0</p>
+            </div>
+            <div class="mastery-stat-card mastery-stat-card-warning">
+              <p class="mastery-stat-label">Learning</p>
+              <p id="mastery-learning-count" class="mastery-stat-value">0</p>
+            </div>
+          </div>
+
+          <div class="mastery-progress-track mt-4" aria-hidden="true">
+            <div id="mastery-progress-fill" class="mastery-progress-fill"></div>
+          </div>
+          <p id="mastery-progress-text" class="mastery-progress-text">0% mastered</p>
+          <p id="mastery-session-text" class="mastery-session-text">Session accuracy: 0/0 | Streak: 0</p>
+
+          <div class="mastery-sidebar-actions mt-4">
+            <button id="mastery-shuffle-btn" type="button" class="study-btn">Shuffle Queue</button>
+            <button id="mastery-reset-btn" type="button" class="study-btn study-btn-ghost">Reset Mastered</button>
+          </div>
+
+          <details class="mastery-known-details mt-4" open>
+            <summary class="font-semibold cursor-pointer">Mastered Questions</summary>
+            <div id="mastery-known-items" class="mastery-known-items"></div>
+          </details>
+        </aside>
+
+        <section class="mastery-stage">
+          <article id="mastery-loading" class="card static-card mastery-loading-card">
+            Loading question bank...
+          </article>
+
+          <article id="mastery-question-card" class="card static-card mastery-question-card" hidden>
+            <div class="mastery-question-header">
+              <p id="mastery-question-counter" class="mastery-question-counter">Question</p>
+              <span id="mastery-question-type" class="mastery-question-type">Single answer</span>
+            </div>
+
+            <p id="mastery-question-text" class="mastery-question-text"></p>
+            <div id="mastery-options" class="mastery-options"></div>
+
+            <div class="mastery-action-row">
+              <button id="mastery-check-btn" type="button" class="study-btn">Check Answer</button>
+              <button id="mastery-dont-know-btn" type="button" class="study-btn study-btn-secondary">I don&apos;t know yet</button>
+              <button id="mastery-next-btn" type="button" class="study-btn study-btn-ghost" hidden>Next Question</button>
+            </div>
+
+            <p id="mastery-feedback" class="mastery-feedback" aria-live="polite"></p>
+          </article>
+
+          <article id="mastery-complete-card" class="card static-card mastery-complete-card" hidden>
+            <h3 class="text-2xl font-bold mb-2">All Questions Mastered</h3>
+            <p id="mastery-complete-text" class="text-slate-700 mb-4">Great work. You have mastered this question bank.</p>
+            <button id="mastery-restart-btn" type="button" class="study-btn">Start Fresh Cycle</button>
+          </article>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-6 text-center bg-gray-100">
+    <a class="hover:underline" href="dashboard.html">Back to Dashboard</a>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
